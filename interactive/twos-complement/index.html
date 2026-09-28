@@ -1,0 +1,10 @@
+<!doctype html><html lang="no"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EduNumbers – Two's complement</title><link rel="stylesheet" href="style.css"></head><body><main>
+<p><a href="../../no/">← EduNumbers</a></p><h1>Two’s-complement explorer</h1>
+<p>Samme bitmønster kan bety forskjellige tall. Utforsk signed og unsigned tolkning side om side.</p>
+<section class="controls"><label>Signed verdi <input id="signed" value="-1" inputmode="numeric"></label>
+<label>Bredde <select id="width"><option>8</option><option>16</option><option>32</option></select> bit</label><p id="error" role="alert" aria-live="polite"></p></section>
+<section class="cards"><div><h2>Bitmønster</h2><code id="binary"></code></div><div><h2>Hex</h2><code id="hex"></code></div>
+<div><h2>Unsigned</h2><code id="unsigned"></code></div><div><h2>Signed</h2><code id="signedOut"></code></div></section>
+<section><h2>Hva skjer?</h2><p id="explain"></p><p><strong>Signed område:</strong> <code id="range"></code></p></section>
+</main><script src="twos.js"></script></body></html>
