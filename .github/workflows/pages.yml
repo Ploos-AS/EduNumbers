@@ -57,6 +57,7 @@ jobs:
                 <a href="no/">Norsk</a>
                 <a href="en/">English</a>
                 <a href="interactive/base-converter/">Basekonverterer</a>
+                <a href="interactive/bit-visualizer/">Bit-visualisering</a>
               </nav>
             </main>
           </body>
