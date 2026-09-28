@@ -1,5 +1,6 @@
 PANDOC ?= pandoc
 PYTHON ?= python3
+PDF_ENGINE ?= xelatex
 NO_SRC := $(sort $(wildcard course/no/*.md))
 EN_SRC := $(sort $(wildcard course/en/*.md))
 
@@ -21,8 +22,8 @@ epub: build
 	$(PANDOC) --toc --css=book/epub.css --metadata-file=book/metadata-en.yaml $(EN_SRC) -o build/epub/edunumbers-en.epub
 
 pdf: build
-	$(PANDOC) --toc --metadata-file=book/metadata-no.yaml $(NO_SRC) -o build/pdf/edunumbers-no.pdf
-	$(PANDOC) --toc --metadata-file=book/metadata-en.yaml $(EN_SRC) -o build/pdf/edunumbers-en.pdf
+	$(PANDOC) --pdf-engine=$(PDF_ENGINE) --toc --metadata-file=book/metadata-no.yaml $(NO_SRC) -o build/pdf/edunumbers-no.pdf
+	$(PANDOC) --pdf-engine=$(PDF_ENGINE) --toc --metadata-file=book/metadata-en.yaml $(EN_SRC) -o build/pdf/edunumbers-en.pdf
 
 kindle: epub
 	@if command -v ebook-convert >/dev/null 2>&1; then \
