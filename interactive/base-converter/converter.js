@@ -1,0 +1,53 @@
+"use strict";
+
+const value = document.querySelector("#value");
+const base = document.querySelector("#base");
+const error = document.querySelector("#error");
+const outputs = [[2,"b2"],[8,"b8"],[10,"b10"],[16,"b16"],[36,"b36"]];
+
+function digitValue(ch) {
+  const code = ch.toUpperCase().charCodeAt(0);
+  if (code >= 48 && code <= 57) return code - 48;
+  if (code >= 65 && code <= 90) return code - 55;
+  return -1;
+}
+
+function parseInBase(text, radix) {
+  let s = text.trim();
+  if (!s) throw new Error("Skriv inn et heltall.");
+  let sign = 1n;
+  if (s[0] === "+" || s[0] === "-") {
+    if (s[0] === "-") sign = -1n;
+    s = s.slice(1);
+  }
+  if (!s) throw new Error("Tallet mangler sifre.");
+  let result = 0n;
+  for (const ch of s) {
+    const digit = digitValue(ch);
+    if (digit < 0 || digit >= radix)
+      throw new Error(`Sifferet «${ch}» er ikke gyldig i base ${radix}.`);
+    result = result * BigInt(radix) + BigInt(digit);
+  }
+  return sign * result;
+}
+
+function update() {
+  const radix = Number(base.value);
+  if (!Number.isInteger(radix) || radix < 2 || radix > 36) {
+    error.textContent = "Basen må være et heltall fra 2 til 36.";
+    outputs.forEach(([,id]) => document.querySelector("#"+id).textContent = "—");
+    return;
+  }
+  try {
+    const n = parseInBase(value.value, radix);
+    error.textContent = "";
+    for (const [r,id] of outputs)
+      document.querySelector("#"+id).textContent = n.toString(r).toUpperCase();
+  } catch (e) {
+    error.textContent = e.message;
+    outputs.forEach(([,id]) => document.querySelector("#"+id).textContent = "—");
+  }
+}
+value.addEventListener("input", update);
+base.addEventListener("input", update);
+update();
