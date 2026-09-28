@@ -21,7 +21,9 @@ jobs:
       - name: Check sources
         run: make check
       - name: Test interactive tools
-        run: node tests/base-converter.test.js
+        run: |
+          node tests/base-converter.test.js
+          node tests/bit-visualizer.test.js
       - name: Build HTML, EPUB, PDF and Kindle
         run: make all
       - name: Upload course artifacts
