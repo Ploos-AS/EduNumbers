@@ -47,7 +47,8 @@ quality:
 	pdfinfo build/pdf/edunumbers-en.pdf >/dev/null
 	@if ls build/kindle/*.azw3 >/dev/null 2>&1; then \
 		command -v ebook-meta >/dev/null 2>&1 || { echo "ebook-meta is required for AZW3 QA"; exit 1; }; \
-		for f in build/kindle/*.azw3; do ebook-meta "$f" >/dev/null; done; \
+		ebook-meta build/kindle/edunumbers-no.azw3 >/dev/null; \
+		ebook-meta build/kindle/edunumbers-en.azw3 >/dev/null; \
 	else \
 		echo "Kindle output is EPUB fallback; EPUB validation already passed."; \
 	fi
