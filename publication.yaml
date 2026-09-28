@@ -1,0 +1,34 @@
+schema_version: 1
+project: EduNumbers
+work:
+  id: edunumbers
+edition:
+  number: 1
+  revision: 1
+lifecycle:
+  status: candidate
+publications:
+  nb:
+    title: Tallsystemer
+    author: Per Gustav Ousdal
+    publisher: Ploos AS
+    copyright_holder: Ploos AS
+    license: CC-BY-4.0
+    products:
+      web: {}
+      epub:
+        isbn: PENDING
+      pdf:
+        isbn: PENDING
+  en:
+    title: Number Systems
+    author: Per Gustav Ousdal
+    publisher: Ploos AS
+    copyright_holder: Ploos AS
+    license: CC-BY-4.0
+    products:
+      web: {}
+      epub:
+        isbn: PENDING
+      pdf:
+        isbn: PENDING
