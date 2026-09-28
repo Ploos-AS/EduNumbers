@@ -1,0 +1,11 @@
+<!doctype html><html lang="no"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EduNumbers – Bitmask Playground</title><link rel="stylesheet" href="style.css"></head><body><main>
+<p><a href="../../no/">← EduNumbers</a></p><h1>Bitmask Playground</h1><p>Utforsk hvordan masker endrer og tester individuelle bits.</p>
+<section class="controls"><label>Verdi (hex)<input id="value" value="A5"></label><label>Maske (hex)<input id="mask" value="0F"></label>
+<label>Bredde<select id="width"><option>8</option><option>16</option><option>32</option></select> bit</label><p id="error" role="alert"></p></section>
+<table><thead><tr><th>Operasjon</th><th>Hex</th><th>Binær</th></tr></thead><tbody id="results"></tbody></table>
+<section><h2>Praktiske mønstre</h2><dl><div><dt>Set</dt><dd><code>value | mask</code> — setter maskerte bits.</dd></div>
+<div><dt>Clear</dt><dd><code>value & ~mask</code> — nullstiller maskerte bits.</dd></div>
+<div><dt>Toggle</dt><dd><code>value ^ mask</code> — inverterer maskerte bits.</dd></div>
+<div><dt>Test</dt><dd id="test"></dd></div></dl></section>
+</main><script src="bitmask.js"></script></body></html>
