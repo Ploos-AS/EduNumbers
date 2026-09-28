@@ -58,6 +58,7 @@ jobs:
                 <a href="en/">English</a>
                 <a href="interactive/base-converter/">Basekonverterer</a>
                 <a href="interactive/bit-visualizer/">Bit-visualisering</a>
+                <a href="interactive/twos-complement/">Two’s complement</a>
               </nav>
             </main>
           </body>
