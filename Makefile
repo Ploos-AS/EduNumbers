@@ -4,8 +4,8 @@ PDF_ENGINE ?= xelatex
 NO_SRC := $(sort $(wildcard course/no/*.md))
 EN_SRC := $(sort $(wildcard course/en/*.md))
 
-.PHONY: all html epub pdf kindle check clean
-all: check html epub pdf kindle
+.PHONY: all html epub pdf kindle check validate clean
+all: check html epub pdf kindle validate
 
 build:
 	mkdir -p build/html/no build/html/en build/epub build/pdf build/kindle
@@ -34,6 +34,9 @@ kindle: epub
 		cp build/epub/edunumbers-en.epub build/kindle/edunumbers-en-kindle.epub; \
 		echo 'Calibre not installed; Kindle-compatible EPUB retained.'; \
 	fi
+
+validate:
+	$(PYTHON) scripts/check_artifacts.py
 
 clean:
 	rm -rf build
