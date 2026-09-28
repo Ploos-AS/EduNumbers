@@ -61,6 +61,7 @@ jobs:
                 <a href="interactive/twos-complement/">Two’s complement</a>
                 <a href="interactive/endian-visualizer/">Endian-visualisering</a>
                 <a href="interactive/bitmask-playground/">Bitmask Playground</a>
+                <a href="interactive/ieee754-explorer/">IEEE-754 Explorer</a>
               </nav>
             </main>
           </body>
