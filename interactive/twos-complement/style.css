@@ -1,0 +1,4 @@
+:root{font-family:system-ui,sans-serif;line-height:1.55;color-scheme:light dark}body{margin:0}main{max-width:60rem;margin:3rem auto;padding:0 1.25rem}
+.controls{display:flex;gap:1.5rem;flex-wrap:wrap}.controls label{display:grid;gap:.3rem}input,select{font:inherit;padding:.5rem}#error{flex-basis:100%;min-height:1.5em;font-weight:600}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(12rem,1fr));gap:.75rem}.cards div{border:1px solid #8888;border-radius:.6rem;padding:1rem}.cards h2{font-size:1rem;margin-top:0}
+code{font-family:ui-monospace,monospace;overflow-wrap:anywhere;font-size:1.05rem}a{color:inherit}
