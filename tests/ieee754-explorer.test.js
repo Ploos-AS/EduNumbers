@@ -1,0 +1,10 @@
+const fs=require("fs"),vm=require("vm");const s=fs.readFileSync("interactive/ieee754-explorer/ieee754.js","utf8");
+const a=s.indexOf("function bits32"),b=s.indexOf("function render"),box={ArrayBuffer,DataView,Number,Infinity,NaN};vm.createContext(box);vm.runInContext(s.slice(a,b),box);
+const eq=(a,b,m)=>{if(a!==b)throw new Error(m+": "+a+" != "+b)};
+let d=box.decode32(1);eq(d.bits,0x3F800000,"1.0 bits");eq(d.sign,0,"1 sign");eq(d.exp,127,"1 exponent");eq(d.frac,0,"1 fraction");eq(d.kind,"normal","1 class");eq(d.unbiased,0,"1 unbiased");
+d=box.decode32(-0);eq(d.bits,0x80000000,"-0 bits");eq(d.kind,"zero","-0 class");
+d=box.decode32(Infinity);eq(d.bits,0x7F800000,"inf bits");eq(d.kind,"infinity","inf class");
+d=box.decode32(NaN);eq(d.kind,"NaN","NaN class");
+d=box.decode32(0.1);eq(d.bits,0x3DCCCCCD,"0.1 rounded bits");
+d=box.decode32(2**-149);eq(d.bits,1,"smallest subnormal");eq(d.kind,"subnormal","subnormal class");
+console.log("IEEE-754 binary32 tests passed");
