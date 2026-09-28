@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="no">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>EduNumbers – Basekonverterer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <p><a href="../no/">← EduNumbers</a></p>
+  <h1>Basekonverterer</h1>
+  <p>Utforsk hvordan samme heltall representeres i forskjellige tallsystemer.</p>
+  <section class="tool">
+    <label for="value">Verdi</label>
+    <input id="value" value="42" autocomplete="off" spellcheck="false">
+    <label for="base">Input-base</label>
+    <input id="base" type="number" min="2" max="36" value="10">
+    <p id="error" role="alert" aria-live="polite"></p>
+    <dl>
+      <div><dt>Binær (2)</dt><dd id="b2"></dd></div>
+      <div><dt>Oktal (8)</dt><dd id="b8"></dd></div>
+      <div><dt>Desimal (10)</dt><dd id="b10"></dd></div>
+      <div><dt>Hex (16)</dt><dd id="b16"></dd></div>
+      <div><dt>Base 36</dt><dd id="b36"></dd></div>
+    </dl>
+  </section>
+  <p class="note">Verktøyet bruker JavaScript <code>BigInt</code>, slik at store heltall kan utforskes uten avrundingsfeil.</p>
+</main>
+<script src="converter.js"></script>
+</body>
+</html>
