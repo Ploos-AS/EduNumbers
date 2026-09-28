@@ -25,6 +25,7 @@ jobs:
           node tests/base-converter.test.js
           node tests/bit-visualizer.test.js
           node tests/twos-complement.test.js
+          node tests/endian-visualizer.test.js
       - name: Build HTML, EPUB, PDF and Kindle
         run: make all
       - name: Upload course artifacts
