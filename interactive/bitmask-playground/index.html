@@ -1,11 +1,5 @@
-<!doctype html><html lang="no"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>EduNumbers – Bitmask Playground</title><link rel="stylesheet" href="style.css"></head><body><main>
-<p><a href="../../no/">← EduNumbers</a></p><h1>Bitmask Playground</h1><p>Utforsk hvordan masker endrer og tester individuelle bits.</p>
-<section class="controls"><label>Verdi (hex)<input id="value" value="A5"></label><label>Maske (hex)<input id="mask" value="0F"></label>
-<label>Bredde<select id="width"><option>8</option><option>16</option><option>32</option></select> bit</label><p id="error" role="alert"></p></section>
-<table><thead><tr><th>Operasjon</th><th>Hex</th><th>Binær</th></tr></thead><tbody id="results"></tbody></table>
-<section><h2>Praktiske mønstre</h2><dl><div><dt>Set</dt><dd><code>value | mask</code> — setter maskerte bits.</dd></div>
-<div><dt>Clear</dt><dd><code>value & ~mask</code> — nullstiller maskerte bits.</dd></div>
-<div><dt>Toggle</dt><dd><code>value ^ mask</code> — inverterer maskerte bits.</dd></div>
-<div><dt>Test</dt><dd id="test"></dd></div></dl></section>
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>EduNumbers – Bitmask Playground</title><link rel="stylesheet" href="style.css"><script src="../i18n.js"></script></head><body><main>
+<nav><a data-href-no="../../no/" data-href-en="../../en/" data-no="← EduNumbers" data-en="← EduNumbers"></a> · <a data-lang="no">NO</a> | <a data-lang="en">EN</a></nav><h1>Bitmask Playground</h1><p data-no="Utforsk hvordan masker endrer og tester individuelle bits." data-en="Explore how masks modify and test individual bits."></p>
+<section class="controls"><label><span data-no="Verdi (hex)" data-en="Value (hex)"></span><input id="value" value="A5"></label><label><span data-no="Maske (hex)" data-en="Mask (hex)"></span><input id="mask" value="0F"></label><label><span data-no="Bredde" data-en="Width"></span><select id="width"><option>8</option><option>16</option><option>32</option></select> bit</label><p id="error" role="alert"></p></section>
+<table><thead><tr><th data-no="Operasjon" data-en="Operation"></th><th>Hex</th><th data-no="Binær" data-en="Binary"></th></tr></thead><tbody id="results"></tbody></table><section><h2 data-no="Praktiske mønstre" data-en="Practical patterns"></h2><dl><div><dt>Set</dt><dd><code>value | mask</code> — <span data-no="setter maskerte bits." data-en="sets masked bits."></span></dd></div><div><dt>Clear</dt><dd><code>value & ~mask</code> — <span data-no="nullstiller maskerte bits." data-en="clears masked bits."></span></dd></div><div><dt>Toggle</dt><dd><code>value ^ mask</code> — <span data-no="inverterer maskerte bits." data-en="toggles masked bits."></span></dd></div><div><dt>Test</dt><dd id="test"></dd></div></dl></section>
 </main><script src="bitmask.js"></script></body></html>

@@ -1,12 +1,5 @@
-<!doctype html><html lang="no"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>EduNumbers – IEEE-754 Explorer</title><link rel="stylesheet" href="style.css"></head><body><main>
-<p><a href="../../no/">← EduNumbers</a></p><h1>IEEE-754 Explorer</h1><p>Utforsk hvordan et JavaScript-tall avrundes til IEEE-754 binary32.</p>
-<label>Desimalverdi <input id="value" value="0.1" spellcheck="false"></label><p id="error" role="alert"></p>
-<section class="fields"><div class="sign"><h2>Sign</h2><code id="sign"></code><small>1 bit</small></div>
-<div class="exp"><h2>Eksponent</h2><code id="exponent"></code><small>8 bit, bias 127</small></div>
-<div class="frac"><h2>Fraction</h2><code id="fraction"></code><small>23 bit</small></div></section>
-<dl><div><dt>Hex</dt><dd><code id="hex"></code></dd></div><div><dt>Klasse</dt><dd id="class"></dd></div>
-<div><dt>Lagret binary32-verdi</dt><dd><code id="stored"></code></dd></div><div><dt>Eksponentfelt</dt><dd id="expvalue"></dd></div>
-<div><dt>Unbiased eksponent</dt><dd id="unbiased"></dd></div></dl>
-<p id="explain"></p>
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>EduNumbers – IEEE-754 Explorer</title><link rel="stylesheet" href="style.css"><script src="../i18n.js"></script></head><body><main>
+<nav><a data-href-no="../../no/" data-href-en="../../en/" data-no="← EduNumbers" data-en="← EduNumbers"></a> · <a data-lang="no">NO</a> | <a data-lang="en">EN</a></nav><h1>IEEE-754 Explorer</h1><p data-no="Utforsk hvordan et JavaScript-tall avrundes til IEEE-754 binary32." data-en="Explore how a JavaScript number is rounded to IEEE-754 binary32."></p>
+<label><span data-no="Desimalverdi" data-en="Decimal value"></span> <input id="value" value="0.1" spellcheck="false"></label><p id="error" role="alert"></p><section class="fields"><div class="sign"><h2>Sign</h2><code id="sign"></code><small>1 bit</small></div><div class="exp"><h2 data-no="Eksponent" data-en="Exponent"></h2><code id="exponent"></code><small>8 bit, bias 127</small></div><div class="frac"><h2>Fraction</h2><code id="fraction"></code><small>23 bit</small></div></section>
+<dl><div><dt>Hex</dt><dd><code id="hex"></code></dd></div><div><dt data-no="Klasse" data-en="Class"></dt><dd id="class"></dd></div><div><dt data-no="Lagret binary32-verdi" data-en="Stored binary32 value"></dt><dd><code id="stored"></code></dd></div><div><dt data-no="Eksponentfelt" data-en="Exponent field"></dt><dd id="expvalue"></dd></div><div><dt data-no="Unbiased eksponent" data-en="Unbiased exponent"></dt><dd id="unbiased"></dd></div></dl><p id="explain"></p>
 </main><script src="ieee754.js"></script></body></html>

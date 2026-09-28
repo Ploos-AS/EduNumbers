@@ -51,17 +51,26 @@ jobs:
           <body>
             <main>
               <h1>EduNumbers</h1>
-              <p class="tagline">Learn how computers represent numbers, one bit at a time.</p>
-              <p>Choose language / Velg språk:</p>
+              <p class="tagline">Learn how computers represent numbers, one bit at a time. / Lær hvordan datamaskiner representerer tall, én bit om gangen.</p>
+              <h2>Norsk</h2>
               <nav>
-                <a href="no/">Norsk</a>
-                <a href="en/">English</a>
-                <a href="interactive/base-converter/">Basekonverterer</a>
-                <a href="interactive/bit-visualizer/">Bit-visualisering</a>
-                <a href="interactive/twos-complement/">Two’s complement</a>
-                <a href="interactive/endian-visualizer/">Endian-visualisering</a>
-                <a href="interactive/bitmask-playground/">Bitmask Playground</a>
-                <a href="interactive/ieee754-explorer/">IEEE-754 Explorer</a>
+                <a href="no/">Kurs</a>
+                <a href="interactive/base-converter/?lang=no">Basekonverterer</a>
+                <a href="interactive/bit-visualizer/?lang=no">Bit-visualisering</a>
+                <a href="interactive/twos-complement/?lang=no">Two’s complement</a>
+                <a href="interactive/endian-visualizer/?lang=no">Endian-visualisering</a>
+                <a href="interactive/bitmask-playground/?lang=no">Bitmask Playground</a>
+                <a href="interactive/ieee754-explorer/?lang=no">IEEE-754 Explorer</a>
+              </nav>
+              <h2>English</h2>
+              <nav>
+                <a href="en/">Course</a>
+                <a href="interactive/base-converter/?lang=en">Base Converter</a>
+                <a href="interactive/bit-visualizer/?lang=en">Bit Visualizer</a>
+                <a href="interactive/twos-complement/?lang=en">Two’s Complement</a>
+                <a href="interactive/endian-visualizer/?lang=en">Endian Visualizer</a>
+                <a href="interactive/bitmask-playground/?lang=en">Bitmask Playground</a>
+                <a href="interactive/ieee754-explorer/?lang=en">IEEE-754 Explorer</a>
               </nav>
             </main>
           </body>
