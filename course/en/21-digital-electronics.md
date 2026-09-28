@@ -32,9 +32,7 @@ An idealized N-bit ADC provides (2^N) digital codes. A 10-bit converter has 1024
 
 A simple idealized unipolar conversion can be approximated by
 
-[
-V \approx \frac{code}{2^N-1}V_{ref}
-]
+`V ≈ code / (2^N - 1) × Vref`
 
 but the exact transfer function, reference, tolerances and endpoint conventions come from the datasheet.
 
