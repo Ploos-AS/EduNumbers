@@ -1,0 +1,77 @@
+name: Deploy course to Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install publishing toolchain
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc
+      - name: Check sources
+        run: make check
+      - name: Build HTML
+        run: make html
+      - name: Assemble Pages site
+        run: |
+          mkdir -p _site/no _site/en
+          cp build/html/no/index.html _site/no/index.html
+          cp build/html/en/index.html _site/en/index.html
+          cat > _site/index.html <<'EOF'
+          <!doctype html>
+          <html lang="en">
+          <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width,initial-scale=1">
+            <title>EduNumbers</title>
+            <style>
+              body{font-family:system-ui,sans-serif;max-width:46rem;margin:5rem auto;padding:0 1.25rem;line-height:1.6}
+              h1{font-size:2.5rem;margin-bottom:.25rem}
+              .tagline{font-size:1.2rem;color:#555}
+              nav{display:flex;gap:1rem;flex-wrap:wrap;margin-top:2rem}
+              a{display:inline-block;padding:.8rem 1.1rem;border:1px solid currentColor;border-radius:.5rem;text-decoration:none}
+            </style>
+          </head>
+          <body>
+            <main>
+              <h1>EduNumbers</h1>
+              <p class="tagline">Learn how computers represent numbers, one bit at a time.</p>
+              <p>Choose language / Velg språk:</p>
+              <nav>
+                <a href="no/">Norsk</a>
+                <a href="en/">English</a>
+              </nav>
+            </main>
+          </body>
+          </html>
+          EOF
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
