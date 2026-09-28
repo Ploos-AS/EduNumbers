@@ -28,6 +28,7 @@ jobs:
           node tests/endian-visualizer.test.js
           node tests/bitmask-playground.test.js
           node tests/ieee754-explorer.test.js
+          node tests/interactive-i18n.test.js
       - name: Build HTML, EPUB, PDF and Kindle
         run: make all
       - name: Upload course artifacts
