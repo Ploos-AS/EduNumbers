@@ -1,11 +1,5 @@
-<!doctype html><html lang="no"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>EduNumbers – Endian-visualisering</title><link rel="stylesheet" href="style.css"></head><body><main>
-<p><a href="../../no/">← EduNumbers</a></p><h1>Endian-visualisering</h1>
-<p>Se hvordan samme heltall lagres byte for byte i minnet med big-endian og little-endian.</p>
-<section class="controls"><label>Hex-verdi <input id="value" value="12345678" spellcheck="false"></label>
-<label>Bredde <select id="width"><option>16</option><option selected>32</option><option>64</option></select> bit</label>
-<label>Startadresse <input id="address" value="1000" spellcheck="false"></label><p id="error" role="alert"></p></section>
-<p><strong>Normalisert verdi:</strong> <code id="normalized"></code></p>
-<section class="orders"><div><h2>Big-endian</h2><p>Most significant byte først.</p><div id="big" class="memory"></div></div>
-<div><h2>Little-endian</h2><p>Least significant byte først.</p><div id="little" class="memory"></div></div></section>
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>EduNumbers – Endian Visualizer</title><link rel="stylesheet" href="style.css"><script src="../i18n.js"></script></head><body><main>
+<nav><a data-href-no="../../no/" data-href-en="../../en/" data-no="← EduNumbers" data-en="← EduNumbers"></a> · <a data-lang="no">NO</a> | <a data-lang="en">EN</a></nav><h1 data-no="Endian-visualisering" data-en="Endian Visualizer"></h1><p data-no="Se hvordan samme heltall lagres byte for byte i minnet med big-endian og little-endian." data-en="See how the same integer is stored byte by byte in memory using big-endian and little-endian."></p>
+<section class="controls"><label><span data-no="Hex-verdi" data-en="Hex value"></span> <input id="value" value="12345678" spellcheck="false"></label><label><span data-no="Bredde" data-en="Width"></span> <select id="width"><option>16</option><option selected>32</option><option>64</option></select> bit</label><label><span data-no="Startadresse" data-en="Start address"></span> <input id="address" value="1000" spellcheck="false"></label><p id="error" role="alert"></p></section>
+<p><strong data-no="Normalisert verdi:" data-en="Normalized value:"></strong> <code id="normalized"></code></p><section class="orders"><div><h2>Big-endian</h2><p data-no="Most significant byte først." data-en="Most significant byte first."></p><div id="big" class="memory"></div></div><div><h2>Little-endian</h2><p data-no="Least significant byte først." data-en="Least significant byte first."></p><div id="little" class="memory"></div></div></section>
 </main><script src="endian.js"></script></body></html>
