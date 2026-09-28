@@ -1,0 +1,6 @@
+:root{font-family:system-ui,sans-serif;line-height:1.5;color-scheme:light dark}body{margin:0}main{max-width:72rem;margin:3rem auto;padding:0 1.25rem}
+.controls{display:flex;gap:1.5rem;flex-wrap:wrap;align-items:end}.controls label{display:grid;gap:.3rem}input,select{font:inherit;padding:.45rem}
+#error{flex-basis:100%;min-height:1.5em;margin:0;font-weight:600}.summary{display:flex;gap:1.5rem;flex-wrap:wrap}code{overflow-wrap:anywhere}
+.bits{display:flex;flex-wrap:wrap;gap:.35rem;align-items:stretch}.bit{font:inherit;min-width:4.2rem;padding:.55rem .35rem;display:grid;gap:.15rem;text-align:center;border:1px solid #8888;border-radius:.4rem;background:transparent;cursor:pointer}
+.bit[aria-pressed="true"]{outline:2px solid currentColor}.bit strong{font-size:1.5rem}.bit span{font-size:.75rem}.byte-start{margin-left:1rem}.contrib{opacity:.75}.hint{margin-top:1.5rem}a{color:inherit}
+@media(max-width:600px){.byte-start{margin-left:.35rem}.bit{min-width:3.8rem}}

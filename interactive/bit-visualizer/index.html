@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="no">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EduNumbers – Bit-visualisering</title><link rel="stylesheet" href="style.css">
+</head>
+<body><main>
+<p><a href="../../no/">← EduNumbers</a></p>
+<h1>Bit-visualisering</h1>
+<p>Se hvordan et usignert heltall bygges opp av individuelle biter. Klikk på et bit for å slå det av eller på.</p>
+<section class="controls">
+<label>Desimalverdi <input id="value" value="42" inputmode="numeric"></label>
+<label>Bredde <select id="width"><option>8</option><option>16</option><option>32</option></select> bit</label>
+<p id="error" role="alert" aria-live="polite"></p>
+</section>
+<section aria-label="Representasjoner" class="summary">
+<p><strong>Desimal:</strong> <code id="decimal"></code></p>
+<p><strong>Hex:</strong> <code id="hex"></code></p>
+<p><strong>Binær:</strong> <code id="binary"></code></p>
+</section>
+<div id="bits" class="bits" aria-label="Bits"></div>
+<p class="hint">Hvert kort viser bitposisjon, 2-potens og bidraget til totalverdien. Tykkere mellomrom markerer bytegrenser.</p>
+</main><script src="bits.js"></script></body></html>
