@@ -1,0 +1,9 @@
+version: 1
+targets:
+  publication:
+    command: make all
+    outputs:
+      - build/epub/edunumbers-no.epub
+      - build/epub/edunumbers-en.epub
+      - build/pdf/edunumbers-no.pdf
+      - build/pdf/edunumbers-en.pdf
