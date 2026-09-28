@@ -53,9 +53,7 @@ En idealisert N-bit ADC har (2^N) digitale koder. En 10-bit ADC har 1024 koder, 
 
 For en enkel idealisert unipolar modell kan en kode omregnes omtrent som:
 
-[
-V \approx \frac{code}{2^N-1}V_{ref}
-]
+`V ≈ code / (2^N - 1) × Vref`
 
 Den nøyaktige overføringsfunksjonen, referansen, toleranser og endpoint-definisjonen må hentes fra databladet.
 
