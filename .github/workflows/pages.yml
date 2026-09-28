@@ -59,6 +59,7 @@ jobs:
                 <a href="interactive/base-converter/">Basekonverterer</a>
                 <a href="interactive/bit-visualizer/">Bit-visualisering</a>
                 <a href="interactive/twos-complement/">Two’s complement</a>
+                <a href="interactive/endian-visualizer/">Endian-visualisering</a>
               </nav>
             </main>
           </body>
