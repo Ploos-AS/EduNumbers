@@ -4,8 +4,8 @@ PDF_ENGINE ?= xelatex
 NO_SRC := $(sort $(wildcard course/no/*.md))
 EN_SRC := $(sort $(wildcard course/en/*.md))
 
-.PHONY: all html epub pdf kindle check validate clean
-all: check html epub pdf kindle validate
+.PHONY: all html epub pdf kindle check validate quality clean
+all: check html epub pdf kindle validate quality
 
 build:
 	mkdir -p build/html/no build/html/en build/epub build/pdf build/kindle
@@ -37,6 +37,20 @@ kindle: epub
 
 validate:
 	$(PYTHON) scripts/check_artifacts.py
+
+quality:
+	@command -v epubcheck >/dev/null 2>&1 || { echo "epubcheck is required for publication QA"; exit 1; }
+	@command -v pdfinfo >/dev/null 2>&1 || { echo "pdfinfo is required for publication QA"; exit 1; }
+	epubcheck build/epub/edunumbers-no.epub
+	epubcheck build/epub/edunumbers-en.epub
+	pdfinfo build/pdf/edunumbers-no.pdf >/dev/null
+	pdfinfo build/pdf/edunumbers-en.pdf >/dev/null
+	@if ls build/kindle/*.azw3 >/dev/null 2>&1; then \
+		command -v ebook-meta >/dev/null 2>&1 || { echo "ebook-meta is required for AZW3 QA"; exit 1; }; \
+		for f in build/kindle/*.azw3; do ebook-meta "$f" >/dev/null; done; \
+	else \
+		echo "Kindle output is EPUB fallback; EPUB validation already passed."; \
+	fi
 
 clean:
 	rm -rf build
