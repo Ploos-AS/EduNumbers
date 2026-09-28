@@ -1,0 +1,52 @@
+name: Publishing M3 pilot
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - publication.yaml
+      - book/**
+      - course/**
+      - Makefile
+      - .github/workflows/publishing.yml
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install publishing toolchain
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc texlive-xetex calibre poppler-utils epubcheck
+      - name: Build and validate publication
+        run: make all
+      - name: Upload publication build
+        uses: actions/upload-artifact@v4
+        with:
+          name: edunumbers-publication-build
+          path: build/
+
+  qualify-no:
+    needs: build
+    uses: Ploos-AS/publishing/.github/workflows/reusable-book-release.yml@main
+    with:
+      metadata: publication.yaml
+      build_config: ""
+      epub: build/epub/edunumbers-no.epub
+      pdf: build/pdf/edunumbers-no.pdf
+      artifact_name: edunumbers-no-qualified
+
+  qualify-en:
+    needs: build
+    uses: Ploos-AS/publishing/.github/workflows/reusable-book-release.yml@main
+    with:
+      metadata: publication.yaml
+      build_config: ""
+      epub: build/epub/edunumbers-en.epub
+      pdf: build/pdf/edunumbers-en.pdf
+      artifact_name: edunumbers-en-qualified
