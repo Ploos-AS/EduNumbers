@@ -1,9 +1,12 @@
-version: 1
-targets:
-  publication:
-    command: make all
-    outputs:
-      - build/epub/edunumbers-no.epub
-      - build/epub/edunumbers-en.epub
-      - build/pdf/edunumbers-no.pdf
-      - build/pdf/edunumbers-en.pdf
+schema_version: 1
+build:
+  clean:
+    - rm -rf build
+  targets:
+    publication:
+      command: make all
+      outputs:
+        - build/epub/edunumbers-no.epub
+        - build/epub/edunumbers-en.epub
+        - build/pdf/edunumbers-no.pdf
+        - build/pdf/edunumbers-en.pdf
