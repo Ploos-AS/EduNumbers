@@ -1,0 +1,14 @@
+---
+documentclass: book
+classoption:
+  - openright
+geometry:
+  - paperwidth=6in
+  - paperheight=9in
+  - inner=0.85in
+  - outer=0.65in
+  - top=0.7in
+  - bottom=0.75in
+fontsize: 11pt
+papersize: custom
+...
