@@ -4,11 +4,11 @@ PDF_ENGINE ?= xelatex
 NO_SRC := $(sort $(wildcard course/no/*.md))
 EN_SRC := $(sort $(wildcard course/en/*.md))
 
-.PHONY: all html epub pdf kindle check validate quality clean
-all: check html epub pdf kindle validate quality
+.PHONY: all html epub pdf print kindle check validate quality clean
+all: check html epub pdf print kindle validate quality
 
 build:
-	mkdir -p build/html/no build/html/en build/epub build/pdf build/kindle
+	mkdir -p build/html/no build/html/en build/epub build/pdf build/print build/kindle
 
 check:
 	$(PYTHON) scripts/check_sources.py
@@ -24,6 +24,10 @@ epub: build
 pdf: build
 	$(PANDOC) --pdf-engine=$(PDF_ENGINE) --toc --metadata-file=book/metadata-no.yaml $(NO_SRC) -o build/pdf/edunumbers-no.pdf
 	$(PANDOC) --pdf-engine=$(PDF_ENGINE) --toc --metadata-file=book/metadata-en.yaml $(EN_SRC) -o build/pdf/edunumbers-en.pdf
+
+print: build
+	$(PANDOC) --pdf-engine=$(PDF_ENGINE) --toc --metadata-file=book/metadata-no.yaml --metadata-file=book/print.yaml $(NO_SRC) -o build/print/edunumbers-no-print.pdf
+	$(PANDOC) --pdf-engine=$(PDF_ENGINE) --toc --metadata-file=book/metadata-en.yaml --metadata-file=book/print.yaml $(EN_SRC) -o build/print/edunumbers-en-print.pdf
 
 kindle: epub
 	@if command -v ebook-convert >/dev/null 2>&1; then \
@@ -45,6 +49,8 @@ quality:
 	epubcheck build/epub/edunumbers-en.epub
 	pdfinfo build/pdf/edunumbers-no.pdf >/dev/null
 	pdfinfo build/pdf/edunumbers-en.pdf >/dev/null
+	pdfinfo build/print/edunumbers-no-print.pdf >/dev/null
+	pdfinfo build/print/edunumbers-en-print.pdf >/dev/null
 	@if ls build/kindle/*.azw3 >/dev/null 2>&1; then \
 		command -v ebook-meta >/dev/null 2>&1 || { echo "ebook-meta is required for AZW3 QA"; exit 1; }; \
 		ebook-meta build/kindle/edunumbers-no.azw3 >/dev/null; \
