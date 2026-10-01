@@ -12,3 +12,5 @@ build:
         - build/pdf/edunumbers-en.pdf
         - build/print/edunumbers-no-print.pdf
         - build/print/edunumbers-en-print.pdf
+        - build/paperback/edunumbers-no-cover.pdf
+        - build/paperback/edunumbers-en-cover.pdf
