@@ -14,7 +14,13 @@ Using four-bit groups:
 
 `A5₁₆ = 1010 0101₂`.
 
+The mapping is exact because four bits have `2⁴ = 16` possible patterns, exactly matching one hexadecimal digit.
+
 Programming languages commonly use the `0xA5` notation. Assemblers and debuggers may also use forms such as `$A5` or an `h` suffix.
+
+## Common misconception
+
+The letters A–F are hexadecimal digits representing the values 10–15. They are not text characters merely because letters are used as symbols.
 
 ## OBSERVE
 
@@ -26,4 +32,4 @@ Hex is compact binary notation. Learning the 16 four-bit patterns removes much o
 
 ## Check yourself
 
-Convert `FF₁₆` to binary and decimal.
+Convert `FF₁₆` to binary and decimal. Explain why one hex digit always maps to exactly four bits.
