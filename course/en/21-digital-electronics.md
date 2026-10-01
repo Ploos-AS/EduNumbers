@@ -28,13 +28,13 @@ A value such as `0x82` is only meaningful once its register and field definition
 
 ## ADC and DAC
 
-An idealized N-bit ADC provides (2^N) digital codes. A 10-bit converter has 1024 codes, usually numbered 0 through 1023.
+An idealized N-bit ADC provides `2ᴺ` digital codes. A 10-bit converter has 1024 codes, usually numbered 0 through 1023.
 
 A simple idealized unipolar conversion can be approximated by
 
-`V ≈ code / (2^N - 1) × Vref`
+`V ≈ code / (2ᴺ - 1) × Vref`
 
-but the exact transfer function, reference, tolerances and endpoint conventions come from the datasheet.
+but the exact transfer function, reference, tolerances and endpoint conventions come from the datasheet. The formula above is therefore a learning model, not a universal ADC law.
 
 A DAC maps digital codes in the opposite direction toward an analog output; its width likewise determines the number of available codes.
 
@@ -54,4 +54,4 @@ Reading a datasheet constantly requires translating among bit positions, masks, 
 
 ## Check yourself
 
-Which bits are set in `0x81`? How many codes does a 12-bit ADC have? Why can ordinary read-modify-write be wrong for some status registers?
+Which bits are set in `0x81`? How many codes does a 12-bit ADC have? Why can ordinary read-modify-write be wrong for some status registers? Why must an ADC conversion formula be checked against the datasheet?
