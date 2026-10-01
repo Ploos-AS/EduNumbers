@@ -1,6 +1,6 @@
 # Oktal: base 8
 
-Oktal bruker sifrene 0–7. Hver oktalsiffer representerer nøyaktig tre binære bit, og derfor er oktal en praktisk kompakt skrivemåte for binære verdier.
+Oktal bruker sifrene 0–7. Hvert oktalsiffer representerer nøyaktig tre binære bit, og derfor er oktal en praktisk kompakt skrivemåte for binære verdier.
 
 ## PREDICT
 
@@ -8,7 +8,7 @@ Hva tror du binært `111 101 010` blir i oktal? Prøv å oversette hver gruppe p
 
 ## STEP
 
-Posisjonene i base 8 har vektene (8^0, 8^1, 8^2,dots).
+Posisjonene i base 8 har vektene `8⁰`, `8¹`, `8²` og så videre.
 
 Eksempel:
 
@@ -23,6 +23,10 @@ Binært kan samme verdi grupperes tre og tre bit:
 Tre bit kan uttrykke verdiene 0–7. Derfor passer én gruppe på tre bit perfekt i ett oktalsiffer.
 
 Oktal dukker fortsatt opp i Unix-lignende systemer. Filmodusen `755` består av tre grupper med rettighetsbit: eier, gruppe og andre.
+
+## Vanlig misoppfatning
+
+Tallet `755` i en Unix-filmodus leses normalt som oktal når det brukes som numerisk rettighetsverdi. Det betyr ikke det desimale tallet sju hundre og femtifem.
 
 ## EXPLAIN
 
