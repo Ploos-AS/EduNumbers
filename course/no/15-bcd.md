@@ -22,6 +22,10 @@ I unpacked BCD bruker hvert siffer typisk en hel byte, mens packed BCD legger to
 
 BCD har vært viktig i kalkulatorer, klokker, tellere, økonomisystemer og eldre maskiner fordi desimalsifre kan bevares direkte og vises uten binær/desimal avrundingsproblematikk.
 
+## Vanlig misoppfatning
+
+`0x42` betyr ikke automatisk desimalt 42. Som et vanlig binært heltall er `0x42 = 66₁₀`; bare når formatet sier packed BCD tolkes de to nibblene som desimalsifrene 4 og 2.
+
 ## OBSERVE
 
 Hexdumpen `42` kan bety vanlig binær verdi 66 eller packed BCD-verdi 42. Formatkontekst avgjør.
@@ -32,4 +36,4 @@ BCD demonstrerer igjen hovedideen i kurset: samme bitmønster kan ha forskjellig
 
 ## Sjekk deg selv
 
-Skriv 1987 som packed BCD. Hvor mange byte kreves?
+Skriv 1987 som packed BCD. Hvor mange byte kreves? Hvorfor kan ikke en hex-editor alene fortelle deg om byten `42` er binær 66 eller BCD 42?
