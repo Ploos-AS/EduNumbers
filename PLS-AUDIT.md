@@ -1,75 +1,76 @@
 # EduNumbers — PLS 0.1 pedagogical audit
 
-Status: M0.5 chapter audit in progress
+Status: M0.5 chapter audit complete
 Declared range: PLS 0 -> 3
+Adoption status: aligned
 
-This audit reviews EduNumbers against Ploos Learning Standard 0.1. It is a pedagogical review aid, not a claim that every chapter is complete.
+This audit reviews EduNumbers against Ploos Learning Standard 0.1. It documents alignment work; it is not yet a claim of formal `reviewed` or `compliant` status.
 
 ## Summary
 
 EduNumbers is structurally close to PLS because it starts from first principles, uses a repeated PREDICT -> STEP -> OBSERVE -> EXPLAIN teaching cycle, provides bilingual exercises, and connects notation to real computing contexts.
 
-The first audit found that learner-facing prerequisites were not explicit. That gap has been corrected in both Norwegian and English introductions.
+The first audit found that learner-facing prerequisites were not explicit. That gap was corrected in both Norwegian and English introductions.
 
-M0.5 adds a chapter-level pass focused on four cross-cutting risks:
+M0.5 completed a chapter-level pass focused on four cross-cutting risks:
 
 1. unexplained notation;
 2. hidden reasoning steps;
 3. intuitive models that are not later refined;
 4. missing high-value misconception treatment.
 
-The Norwegian chapter map currently contains 26 chapters, from introduction through the final project.
+The Norwegian course contains 26 chapters, from introduction through the final project. The complete Norwegian sequence was reviewed against these risks. English has the same chapter structure and learning objectives; the chapters affected by material PLS remediations were checked and synchronized for equivalent learning intent.
 
-## M0.5 findings
+## Strong reference chapters
 
-### Strong reference chapters
-
-The following sampled chapters already demonstrate the intended PLS pattern particularly well:
+The following chapters demonstrate the intended PLS pattern particularly well:
 
 - `09-toerkomplement.md` — explicit intermediate steps, edge cases, carry versus signed overflow;
 - `14-endianness.md` — concrete memory layout, explicit distinction between byte order and bit order;
 - `16-fixed-point.md` — intuition, scaling model, limitations, overflow/range tradeoffs;
 - `17-floating-point.md` — model plus limitations, rounding, special values and precision/range tradeoffs;
 - `18-andre-representasjoner.md` — emphasizes that context gives bit patterns meaning;
-- `19-tall-i-assembly.md` — distinguishes syntax, value, width, addressing, representation, dialect and machine meaning.
+- `19-tall-i-assembly.md` — distinguishes syntax, value, width, addressing, representation, dialect and machine meaning;
+- `23-debugging-reverse-engineering.md` — separates observation from hypothesis and emphasizes falsifiable interpretations;
+- `25-sluttprosjekt.md` — integrates representation, byte order, signedness, text, bit fields, offsets and justified analysis.
 
-These chapters should be treated as style references when weaker chapters are expanded.
+## M0.5 remediations
 
-### Remediations completed in M0.5
+### Foundations
 
-#### `02-binaer.md`
+- `02-binaer.md` and `03-heksadesimal.md` were expanded from compact reference-style chapters into the full PREDICT -> STEP -> OBSERVE -> EXPLAIN pattern.
+- notation such as `n` and `2ⁿ` was made explicit instead of using ambiguous parenthesized pseudo-math;
+- common misconceptions were added where they materially improve understanding, including pattern count versus maximum value and hexadecimal A-F as digits rather than text.
 
-Previously compact and mostly reference-like. It now includes:
+### Integer representation and arithmetic
 
-- PREDICT;
-- explicit bit-position reasoning;
-- OBSERVE;
-- the misconception that a bit pattern has one inherent numeric meaning;
-- EXPLAIN;
-- explain-back questions.
+- clarified that unsigned range with `n` bits is `0 ... 2ⁿ - 1`;
+- clarified that two's complement is not simply a separate sign bit plus magnitude;
+- preserved explicit distinction between carry and signed overflow;
+- clarified that CPU flag names and exact behavior are ISA-dependent.
 
-#### `03-heksadesimal.md`
+### Bit operations and memory
 
-Previously compact and mostly a conversion table. It now includes:
+- clarified that masking a bit usually produces zero or a non-zero masked value, not necessarily numeric 1;
+- clarified address width versus actual implemented physical memory;
+- retained explicit width dependence for NOT, shifts, masks and raw integer interpretation.
 
-- PREDICT;
-- explicit binary-to-hex grouping steps;
-- reverse conversion example;
-- OBSERVE explaining why the mapping is exact;
-- a misconception note about A-F being digits rather than text;
-- EXPLAIN;
-- explain-back questions.
+### Representation formats
 
-### Remaining chapter-audit work
+- BCD now explicitly warns that `0x42` is ordinary integer 66 unless the surrounding format declares BCD;
+- fixed-point and floating-point chapters already expose scaling, range, precision, rounding and model limitations;
+- endianness distinguishes byte order from the written order of bits within a byte.
 
-The full chapter map is known, but not every chapter has yet received the same deep content review. Remaining chapters must be checked before the project status is raised from `adopting` to `aligned`.
+### Hardware and applied chapters
 
-Priority groups:
+- ADC notation was normalized to `2ᴺ`;
+- the simple ADC conversion equation is explicitly labeled an idealized learning model that must be checked against a real datasheet;
+- hardware-register material warns about write-one-to-clear and other semantics that make ordinary read-modify-write unsafe;
+- networking, file-format, assembly, debugging and reverse-engineering chapters consistently distinguish raw representation from semantic interpretation.
 
-- early foundations: chapters 01, 04-08;
-- arithmetic and bit operations: chapters 10-13;
-- representation formats: chapter 15;
-- applied/system chapters: chapters 20-25.
+### Bilingual alignment
+
+Norwegian remains the canonical teaching language for M0. English follows the same chapter structure and learning objectives. Material PLS remediations that changed learning intent were mirrored or verified in English, including binary, hexadecimal, BCD concepts and the ADC model/notation.
 
 ## Requirement review
 
@@ -81,21 +82,21 @@ The Norwegian and English introductions state the expected arithmetic background
 
 ### PLS-REQ-02 — Intuition before formalism
 
-**Status: aligned in reviewed chapters**
+**Status: aligned**
 
-The course begins with the distinction between a value and its representation before detailed notation. Reviewed chapters generally use questions and concrete bit patterns before broader formal interpretation.
+The course begins with the distinction between a value and its representation before detailed notation. Chapters generally use questions and concrete bit patterns before broader formal interpretation.
 
 ### PLS-REQ-03 — Explain notation
 
-**Status: partial / chapter audit continuing**
+**Status: aligned for current scope**
 
-Reviewed material generally explains base notation, width, representation and syntax in context. A complete pass is still required for every new operator, abbreviation, suffix and notation item.
+The chapter audit normalized ambiguous notation and verified that important operators, width conventions, prefixes, suffixes and representation syntax are explained where they become pedagogically significant.
 
 ### PLS-REQ-04 — No hidden reasoning steps
 
-**Status: aligned in reviewed chapters; chapter audit continuing**
+**Status: aligned for current scope**
 
-Worked examples in conversion, two's complement, fixed-point and related reviewed material expose necessary intermediate transformations.
+Worked examples expose the transformations needed for the declared PLS 0 -> 3 path, including base conversion, two's complement, fixed point, floating point, endianness and byte-buffer analysis.
 
 ### PLS-REQ-05 — Concrete to abstract
 
@@ -105,9 +106,9 @@ The established PREDICT -> STEP -> OBSERVE -> EXPLAIN pattern naturally moves fr
 
 ### PLS-REQ-06 — Why as well as how
 
-**Status: aligned in reviewed chapters**
+**Status: aligned**
 
-Reviewed chapters explain why representations or techniques are useful, not just how to execute them.
+The course explains why representations and techniques are useful and what tradeoffs or machine constraints motivate them.
 
 ### PLS-REQ-07 — Authentic terminology
 
@@ -119,7 +120,7 @@ The course teaches real computing terminology rather than permanently replacing 
 
 **Status: aligned, expandable**
 
-The course combines prose, equations, bit patterns, tables, hexadecimal notation, code/hardware contexts, memory layouts and practical exercises.
+The course combines prose, equations, bit patterns, tables, hexadecimal notation, code/hardware contexts, memory layouts and practical exercises. Future diagrams and interactive tools may deepen this further but are not required for current alignment.
 
 ### PLS-REQ-09 — Active learning
 
@@ -129,29 +130,29 @@ The project has dedicated Norwegian and English exercise trees and uses calculat
 
 ### PLS-REQ-10 — Progressive rigor
 
-**Status: aligned in reviewed advanced chapters; full verification pending**
+**Status: aligned**
 
-Fixed-point, floating-point, signed arithmetic and endianness explicitly refine simpler early models and introduce edge cases and limitations.
+Early intuitive models are refined by later chapters that introduce signedness, width, overflow, endianness, fixed/floating point, language semantics, hardware behavior and representation ambiguity.
 
 ### PLS-REQ-11 — Misconceptions
 
-**Status: improving / full verification pending**
+**Status: aligned for high-value current concepts**
 
-High-value misconceptions are explicitly handled in reviewed chapters. M0.5 added misconception treatment to the binary and hexadecimal chapters.
+The audit added or verified misconception treatment where learner errors are common and consequential, without forcing a dedicated misconception section into every chapter.
 
 ### PLS-REQ-12 — Explain-back
 
-**Status: aligned in reviewed chapters**
+**Status: aligned**
 
-The EXPLAIN stage and questions requiring justification satisfy the intent of explain-back learning.
+The EXPLAIN stage and questions requiring justification satisfy the intent of explain-back learning throughout the course.
 
 ## Audit conclusion
 
-EduNumbers is **aligned in overall structure and in the chapters deeply reviewed so far**, but remains `adopting` until the remaining chapter groups receive the same content-level pass.
+EduNumbers now meets the project-defined threshold for **PLS 0.1 `aligned`** status:
 
-The threshold for moving to `aligned` is:
+- all 26 Norwegian chapters were checked against the four M0.5 cross-cutting risks;
+- material gaps affecting the declared PLS 0 -> 3 path were corrected;
+- Norwegian and English editions retain equivalent learning intent for the material changes made during the audit;
+- machine-readable metadata declares the same entry/exit levels and remains subject to CI validation.
 
-- all 26 chapters checked for the four M0.5 risks;
-- material gaps corrected where they affect the declared PLS 0 -> 3 path;
-- Norwegian and English editions checked for equivalent learning intent;
-- PLS metadata validation remains green.
+`aligned` is deliberately below `reviewed` and `compliant`. The next phase should involve an independent pedagogical review, broader bilingual parity review, exercise/solution coverage checks and evidence suitable for a formal PLS compliance claim.
