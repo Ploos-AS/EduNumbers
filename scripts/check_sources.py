@@ -12,6 +12,19 @@ for required in [
     if not required.is_file():
         errors.append(f"missing required file: {required}")
 
+# Keep Pandoc-facing book metadata aligned with canonical publication metadata.
+publication = Path("publication.yaml").read_text(encoding="utf-8") if Path("publication.yaml").is_file() else ""
+for path, title, subtitle in [
+    (Path("book/metadata-no.yaml"), "Tallsystemer", "Fra binært til heksadesimalt – forstå hvordan datamaskiner representerer tall"),
+    (Path("book/metadata-en.yaml"), "Number Systems", "From Binary to Hexadecimal – Understanding How Computers Represent Numbers"),
+]:
+    if path.is_file():
+        metadata = path.read_text(encoding="utf-8")
+        if f'title: "{title}"' not in metadata or f'subtitle: "{subtitle}"' not in metadata:
+            errors.append(f"stale title/subtitle metadata: {path}")
+        if f"title: {title}" not in publication or f'subtitle: "{subtitle}"' not in publication:
+            errors.append(f"canonical title/subtitle missing from publication.yaml: {title}")
+
 def numbered_sources(directory):
     found = {}
     for path in Path(directory).glob("*.md"):
