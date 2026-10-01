@@ -16,9 +16,9 @@ permissions:
 
 jobs:
   qualify-no:
-    uses: Ploos-AS/publishing/.github/workflows/reusable-book-release.yml@361d08cb418b5a37b97294059a52c6606abc605d
+    uses: Ploos-AS/publishing/.github/workflows/reusable-book-release.yml@ae56aab993140209ecb529fbe4a3c01c62cf0caf
     with:
-      publishing_ref: 361d08cb418b5a37b97294059a52c6606abc605d
+      publishing_ref: ae56aab993140209ecb529fbe4a3c01c62cf0caf
       metadata: publication.yaml
       isbn_registry: .ploos-publishing/isbn/registry.yaml
       build_config: book/publishing-build.yaml
@@ -29,9 +29,9 @@ jobs:
       artifact_name: edunumbers-no-qualified
 
   qualify-en:
-    uses: Ploos-AS/publishing/.github/workflows/reusable-book-release.yml@361d08cb418b5a37b97294059a52c6606abc605d
+    uses: Ploos-AS/publishing/.github/workflows/reusable-book-release.yml@ae56aab993140209ecb529fbe4a3c01c62cf0caf
     with:
-      publishing_ref: 361d08cb418b5a37b97294059a52c6606abc605d
+      publishing_ref: ae56aab993140209ecb529fbe4a3c01c62cf0caf
       metadata: publication.yaml
       isbn_registry: .ploos-publishing/isbn/registry.yaml
       build_config: book/publishing-build.yaml
