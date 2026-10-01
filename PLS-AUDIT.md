@@ -1,17 +1,75 @@
 # EduNumbers — PLS 0.1 pedagogical audit
 
-Status: initial audit
+Status: M0.5 chapter audit in progress
 Declared range: PLS 0 -> 3
 
 This audit reviews EduNumbers against Ploos Learning Standard 0.1. It is a pedagogical review aid, not a claim that every chapter is complete.
 
 ## Summary
 
-EduNumbers is already structurally close to PLS because it starts from first principles, uses a repeated PREDICT -> STEP -> OBSERVE -> EXPLAIN teaching cycle, provides bilingual exercises, and connects notation to real computing contexts.
+EduNumbers is structurally close to PLS because it starts from first principles, uses a repeated PREDICT -> STEP -> OBSERVE -> EXPLAIN teaching cycle, provides bilingual exercises, and connects notation to real computing contexts.
 
-The most important gap found in the first audit was that prerequisites were not explicit in the learner-facing course introduction. This has now been corrected in both Norwegian and English.
+The first audit found that learner-facing prerequisites were not explicit. That gap has been corrected in both Norwegian and English introductions.
 
-Several requirements are satisfied in the current material, while others need systematic chapter-by-chapter verification before the project should move to `reviewed` or `compliant`.
+M0.5 adds a chapter-level pass focused on four cross-cutting risks:
+
+1. unexplained notation;
+2. hidden reasoning steps;
+3. intuitive models that are not later refined;
+4. missing high-value misconception treatment.
+
+The Norwegian chapter map currently contains 26 chapters, from introduction through the final project.
+
+## M0.5 findings
+
+### Strong reference chapters
+
+The following sampled chapters already demonstrate the intended PLS pattern particularly well:
+
+- `09-toerkomplement.md` — explicit intermediate steps, edge cases, carry versus signed overflow;
+- `14-endianness.md` — concrete memory layout, explicit distinction between byte order and bit order;
+- `16-fixed-point.md` — intuition, scaling model, limitations, overflow/range tradeoffs;
+- `17-floating-point.md` — model plus limitations, rounding, special values and precision/range tradeoffs;
+- `18-andre-representasjoner.md` — emphasizes that context gives bit patterns meaning;
+- `19-tall-i-assembly.md` — distinguishes syntax, value, width, addressing, representation, dialect and machine meaning.
+
+These chapters should be treated as style references when weaker chapters are expanded.
+
+### Remediations completed in M0.5
+
+#### `02-binaer.md`
+
+Previously compact and mostly reference-like. It now includes:
+
+- PREDICT;
+- explicit bit-position reasoning;
+- OBSERVE;
+- the misconception that a bit pattern has one inherent numeric meaning;
+- EXPLAIN;
+- explain-back questions.
+
+#### `03-heksadesimal.md`
+
+Previously compact and mostly a conversion table. It now includes:
+
+- PREDICT;
+- explicit binary-to-hex grouping steps;
+- reverse conversion example;
+- OBSERVE explaining why the mapping is exact;
+- a misconception note about A-F being digits rather than text;
+- EXPLAIN;
+- explain-back questions.
+
+### Remaining chapter-audit work
+
+The full chapter map is known, but not every chapter has yet received the same deep content review. Remaining chapters must be checked before the project status is raised from `adopting` to `aligned`.
+
+Priority groups:
+
+- early foundations: chapters 01, 04-08;
+- arithmetic and bit operations: chapters 10-13;
+- representation formats: chapter 15;
+- applied/system chapters: chapters 20-25.
 
 ## Requirement review
 
@@ -19,29 +77,25 @@ Several requirements are satisfied in the current material, while others need sy
 
 **Status: aligned**
 
-The Norwegian and English introductions now state the expected arithmetic background and explicitly say that prior binary, hexadecimal, assembly, programming, and digital-electronics knowledge is not required.
+The Norwegian and English introductions state the expected arithmetic background and explicitly say that prior binary, hexadecimal, assembly, programming, and digital-electronics knowledge is not required.
 
 ### PLS-REQ-02 — Intuition before formalism
 
-**Status: aligned, sample verified**
+**Status: aligned in reviewed chapters**
 
-The course begins with the distinction between a value and its representation before introducing detailed notation. Sampled chapters use questions and concrete bit patterns before broader formal interpretation.
+The course begins with the distinction between a value and its representation before detailed notation. Reviewed chapters generally use questions and concrete bit patterns before broader formal interpretation.
 
 ### PLS-REQ-03 — Explain notation
 
-**Status: partial / verify systematically**
+**Status: partial / chapter audit continuing**
 
-The sampled material explains bases and representations in context. A complete audit should verify that every new symbol, operator, suffix, abbreviation, and notation is explained at first pedagogically significant use.
-
-Action: add a notation/terminology pass to chapter review.
+Reviewed material generally explains base notation, width, representation and syntax in context. A complete pass is still required for every new operator, abbreviation, suffix and notation item.
 
 ### PLS-REQ-04 — No hidden reasoning steps
 
-**Status: aligned in sampled material; verify systematically**
+**Status: aligned in reviewed chapters; chapter audit continuing**
 
-Worked examples such as two's-complement conversion show intermediate steps rather than only answers.
-
-Action: review conversion, arithmetic, fixed-point, floating-point, and endianness chapters for skipped transformations.
+Worked examples in conversion, two's complement, fixed-point and related reviewed material expose necessary intermediate transformations.
 
 ### PLS-REQ-05 — Concrete to abstract
 
@@ -51,63 +105,53 @@ The established PREDICT -> STEP -> OBSERVE -> EXPLAIN pattern naturally moves fr
 
 ### PLS-REQ-06 — Why as well as how
 
-**Status: aligned in sampled material**
+**Status: aligned in reviewed chapters**
 
-Sampled chapters explain why representations or techniques are useful, for example why two's complement allows shared addition hardware and why carry and signed overflow answer different questions.
+Reviewed chapters explain why representations or techniques are useful, not just how to execute them.
 
 ### PLS-REQ-07 — Authentic terminology
 
 **Status: aligned**
 
-The course deliberately teaches real computing terminology including binary, hexadecimal, two's complement, overflow, endianness, fixed point, IEEE 754, bit masks, registers, and related terms.
-
-Action: maintain bilingual terminology consistency rather than replacing technical terms with informal substitutes.
+The course teaches real computing terminology rather than permanently replacing it with simplified language.
 
 ### PLS-REQ-08 — Multiple representations
 
-**Status: aligned, but expandable**
+**Status: aligned, expandable**
 
-The course combines prose, mathematical notation, bit patterns, hexadecimal notation, code/hardware contexts, and practical exercises.
-
-Action: add diagrams or interactive visualizations where they materially improve difficult topics such as bit significance, endianness, fixed point, and IEEE 754.
+The course combines prose, equations, bit patterns, tables, hexadecimal notation, code/hardware contexts, memory layouts and practical exercises.
 
 ### PLS-REQ-09 — Active learning
 
 **Status: aligned**
 
-The project has dedicated Norwegian and English exercise trees. Exercises include calculation, interpretation, prediction, explanation, and practical computing tasks rather than recall alone.
+The project has dedicated Norwegian and English exercise trees and uses calculation, prediction, interpretation, explanation and practical tasks.
 
 ### PLS-REQ-10 — Progressive rigor
 
-**Status: partial / verify systematically**
+**Status: aligned in reviewed advanced chapters; full verification pending**
 
-The curriculum progresses from basic representations toward signed arithmetic, memory, numeric formats, assembly, programming, hardware, networking, debugging, and reverse engineering.
-
-Action: verify that intuitive early models are refined when later chapters introduce edge cases and formal limitations.
+Fixed-point, floating-point, signed arithmetic and endianness explicitly refine simpler early models and introduce edge cases and limitations.
 
 ### PLS-REQ-11 — Misconceptions
 
-**Status: partial**
+**Status: improving / full verification pending**
 
-The sampled material explicitly handles important traps such as carry versus signed overflow and the asymmetric signed 8-bit range. However, misconception treatment is not yet a consistently declared chapter element.
-
-Action: identify at least one high-value misconception for concepts where learners commonly fail, without forcing a section where none is useful.
+High-value misconceptions are explicitly handled in reviewed chapters. M0.5 added misconception treatment to the binary and hexadecimal chapters.
 
 ### PLS-REQ-12 — Explain-back
 
-**Status: aligned in sampled material**
+**Status: aligned in reviewed chapters**
 
-The EXPLAIN stage and exercises asking learners to justify differences and edge cases satisfy the intent of explain-back learning.
-
-Action: preserve explanation/justification questions as the course expands.
+The EXPLAIN stage and questions requiring justification satisfy the intent of explain-back learning.
 
 ## Audit conclusion
 
-EduNumbers is a strong PLS pilot and may be considered **aligned in structure**, but should remain in adoption/review status until the complete chapter set has undergone notation, hidden-step, progressive-rigor, and misconception review.
+EduNumbers is **aligned in overall structure and in the chapters deeply reviewed so far**, but remains `adopting` until the remaining chapter groups receive the same content-level pass.
 
-The next audit pass should focus on four cross-cutting checks:
+The threshold for moving to `aligned` is:
 
-1. every new notation item is introduced;
-2. no required intermediate reasoning step is skipped;
-3. intuitive models are corrected or refined before they become misleading;
-4. common misconceptions are explicitly addressed where valuable.
+- all 26 chapters checked for the four M0.5 risks;
+- material gaps corrected where they affect the declared PLS 0 -> 3 path;
+- Norwegian and English editions checked for equivalent learning intent;
+- PLS metadata validation remains green.
