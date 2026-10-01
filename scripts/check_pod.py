@@ -30,8 +30,8 @@ def main():
                 errors.append("invalid PDF header")
         try:
             info = pdfinfo(path)
-            pages = re.search(r"^Pages:\\s+(\\d+)", info, re.MULTILINE)
-            size = re.search(r"^Page size:\\s+([0-9.]+) x ([0-9.]+) pts", info, re.MULTILINE)
+            pages = re.search(r"^Pages:\s*(\d+)\s*$", info, re.MULTILINE | re.IGNORECASE)
+            size = re.search(r"^Page\s+size:\s*([0-9.]+)\s*x\s*([0-9.]+)\s*pts(?:\s.*)?$", info, re.MULTILINE | re.IGNORECASE)
             if not pages or int(pages.group(1)) < 1:
                 errors.append("invalid page count")
             if not size:
