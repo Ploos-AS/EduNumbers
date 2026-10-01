@@ -49,13 +49,13 @@ En verdi som `0x82` er først nyttig når vi vet hvilket register den tilhører 
 
 ## ADC
 
-En idealisert N-bit ADC har (2^N) digitale koder. En 10-bit ADC har 1024 koder, normalt 0–1023.
+En idealisert N-bit ADC har `2ᴺ` digitale koder. En 10-bit ADC har 1024 koder, normalt 0–1023.
 
 For en enkel idealisert unipolar modell kan en kode omregnes omtrent som:
 
-`V ≈ code / (2^N - 1) × Vref`
+`V ≈ code / (2ᴺ - 1) × Vref`
 
-Den nøyaktige overføringsfunksjonen, referansen, toleranser og endpoint-definisjonen må hentes fra databladet.
+Den nøyaktige overføringsfunksjonen, referansen, toleranser og endpoint-definisjonen må hentes fra databladet. Formelen over er derfor en læringsmodell, ikke en universell ADC-lov.
 
 ## DAC
 
@@ -85,4 +85,4 @@ Når du leser et datablad, oversetter du kontinuerlig mellom bitposisjoner, mask
 
 ## Sjekk deg selv
 
-Hvilke bit er satt i `0x81`? Hvor mange koder har en 12-bit ADC? Hvorfor bør du ikke anta at alle statusflagg kan nullstilles med vanlig read-modify-write?
+Hvilke bit er satt i `0x81`? Hvor mange koder har en 12-bit ADC? Hvorfor bør du ikke anta at alle statusflagg kan nullstilles med vanlig read-modify-write? Hvorfor må en ADC-formel alltid kontrolleres mot databladet?
