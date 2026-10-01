@@ -53,8 +53,7 @@ validate:
 pod-qa: paperback
 	$(PYTHON) scripts/check_pod.py build/print/edunumbers-no-print.pdf
 	$(PYTHON) scripts/check_pod.py build/print/edunumbers-en-print.pdf
-	pdfinfo build/paperback/edunumbers-no-cover.pdf >/dev/null
-	pdfinfo build/paperback/edunumbers-en-cover.pdf >/dev/null
+	$(PYTHON) $(PUBLISHING_CLI) paperback-cover-check build/paperback/edunumbers-no-cover.pdf --pages `pdfinfo build/print/edunumbers-no-print.pdf | awk '/^Pages:/ {print $2}'` --config $(PAPERBACK_PROFILE)\n	$(PYTHON) $(PUBLISHING_CLI) paperback-cover-check build/paperback/edunumbers-en-cover.pdf --pages `pdfinfo build/print/edunumbers-en-print.pdf | awk '/^Pages:/ {print $2}'` --config $(PAPERBACK_PROFILE)
 
 quality:
 	@command -v epubcheck >/dev/null 2>&1 || { echo "epubcheck is required for publication QA"; exit 1; }
