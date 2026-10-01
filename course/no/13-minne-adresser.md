@@ -18,13 +18,17 @@ En **offset** er en forskyvning relativt til en basisadresse. Hvis base er `0x20
 
 ## Adresserom
 
-Med (n) adressebit kan (2^n) forskjellige adresser kodes. Hvor mye minne dette beskriver avhenger av hva hver adresse peker på. På vanlige byte-adresserte systemer betyr 16 adressebit opptil 65 536 byteadresser.
+Med `n` adressebit kan `2ⁿ` forskjellige adresser kodes. Hvor mye data dette kan adressere avhenger av hva hver adresse peker på. På et byte-adressert system betyr 16 adressebit opptil 65 536 forskjellige byteadresser.
 
 ## Alignment
 
 Mange arkitekturer foretrekker eller krever at flerbyteverdier starter på bestemte adressegrenser. En 32-bit verdi kan for eksempel være naturlig aligned på en adresse delelig med 4.
 
 Alignment er en maskinregel eller ytelsesegenskap, ikke en egenskap ved selve tallet.
+
+## Vanlig misoppfatning
+
+Et adresserom er ikke det samme som mengden fysisk RAM som faktisk er installert. En CPU kan kunne uttrykke flere adresser enn systemet har fysisk minne for, og deler av adresserommet kan dessuten brukes til enheter, ROM eller andre formål.
 
 ## OBSERVE
 
