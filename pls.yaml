@@ -20,3 +20,8 @@ resource:
     - "Apply binary arithmetic, bitwise operations, masks, fields, endianness, and encoded values to practical computing problems."
     - "Interpret numeric representations in assembly language, C, Python, memory dumps, hardware registers, networks, and file formats."
     - "Use correct terminology and justify representation choices and debugging conclusions rather than only reproduce procedures."
+  review_paths:
+    - "course/**"
+    - "exercises/**"
+    - "solutions/**"
+    - "book/**"
