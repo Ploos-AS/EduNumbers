@@ -8,9 +8,9 @@ Hva er den største verdien som kan lagres i åtte bit?
 
 ## STEP
 
-Med (n) bit finnes (2^n) mønstre. For unsigned heltall representerer de verdiene
+Med `n` bit finnes `2ⁿ` mønstre. For unsigned heltall representerer de verdiene
 
-`0 ... 2^n - 1`.
+`0 ... 2ⁿ - 1`.
 
 Dermed er områdene blant annet:
 
@@ -25,9 +25,13 @@ Dermed er områdene blant annet:
 
 ## Overflow og wraparound
 
-En fast bitbredde kan ikke representere vilkårlig store verdier. I modulo-(2^n)-aritmetikk vil en verdi som passerer maksimum gå rundt:
+En fast bitbredde kan ikke representere vilkårlig store verdier. I aritmetikk modulo `2ⁿ` vil en verdi som passerer maksimum gå rundt dersom bare de nederste `n` bitene beholdes.
 
-`255 + 1 = 0` for en 8-bit unsigned verdi dersom bare de nederste åtte bitene beholdes.
+For eksempel blir `255 + 1 = 0` med 8-bit unsigned wraparound.
+
+## Vanlig misoppfatning
+
+Åtte bit gir 256 mulige mønstre, men området er 0–255 fordi null også bruker ett av mønstrene.
 
 ## OBSERVE
 
