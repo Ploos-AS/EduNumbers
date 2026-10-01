@@ -21,6 +21,22 @@ publications:
         isbn: PENDING
       pdf:
         isbn: PENDING
+      paperback:
+        isbn: PENDING
+        production: POD
+      kindle:
+        isbn: null
+        external_id_type: ASIN
+        external_id: null
+        source: epub
+      paperback:
+        isbn: PENDING
+        production: POD
+      kindle:
+        isbn: null
+        external_id_type: ASIN
+        external_id: null
+        source: epub
   en:
     title: Number Systems
     subtitle: "From Binary to Hexadecimal – Understanding How Computers Represent Numbers"
