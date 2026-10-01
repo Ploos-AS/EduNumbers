@@ -1,14 +1,16 @@
 PANDOC ?= pandoc
 PYTHON ?= python3
+PUBLISHING_CLI ?= .ploos-publishing/scripts/ploos_publish.py
+PAPERBACK_PROFILE ?= .ploos-publishing/metadata/paperback-kdp-white.yaml
 PDF_ENGINE ?= xelatex
 NO_SRC := $(sort $(wildcard course/no/*.md))
 EN_SRC := $(sort $(wildcard course/en/*.md))
 
-.PHONY: all html epub pdf print kindle check validate pod-qa quality clean
+.PHONY: all html epub pdf print paperback kindle check validate pod-qa quality clean
 all: check html epub pdf print kindle validate pod-qa quality
 
 build:
-	mkdir -p build/html/no build/html/en build/epub build/pdf build/print build/kindle
+	mkdir -p build/html/no build/html/en build/epub build/pdf build/print build/paperback build/kindle
 
 check:
 	$(PYTHON) scripts/check_sources.py
@@ -29,6 +31,14 @@ print: build
 	$(PANDOC) --pdf-engine=$(PDF_ENGINE) --toc --metadata-file=book/metadata-no.yaml --metadata-file=book/print.yaml $(NO_SRC) -o build/print/edunumbers-no-print.pdf
 	$(PANDOC) --pdf-engine=$(PDF_ENGINE) --toc --metadata-file=book/metadata-en.yaml --metadata-file=book/print.yaml $(EN_SRC) -o build/print/edunumbers-en-print.pdf
 
+paperback: print
+	@command -v rsvg-convert >/dev/null 2>&1 || { echo "rsvg-convert is required for paperback covers"; exit 1; }
+	@test -f $(PUBLISHING_CLI) || { echo "Ploos publishing CLI not found: $(PUBLISHING_CLI)"; exit 1; }
+	@NO_PAGES=$(pdfinfo build/print/edunumbers-no-print.pdf | awk '/^Pages:/ {print $2}'); \
+	$(PYTHON) $(PUBLISHING_CLI) paperback-cover publication.yaml --language nb --pages $NO_PAGES --config $(PAPERBACK_PROFILE) -o build/paperback/edunumbers-no-cover.pdf
+	@EN_PAGES=$(pdfinfo build/print/edunumbers-en-print.pdf | awk '/^Pages:/ {print $2}'); \
+	$(PYTHON) $(PUBLISHING_CLI) paperback-cover publication.yaml --language en --pages $EN_PAGES --config $(PAPERBACK_PROFILE) -o build/paperback/edunumbers-en-cover.pdf
+
 kindle: epub
 	@if command -v ebook-convert >/dev/null 2>&1; then \
 		ebook-convert build/epub/edunumbers-no.epub build/kindle/edunumbers-no.azw3; \
@@ -42,9 +52,11 @@ kindle: epub
 validate:
 	$(PYTHON) scripts/check_artifacts.py
 
-pod-qa: print
+pod-qa: paperback
 	$(PYTHON) scripts/check_pod.py build/print/edunumbers-no-print.pdf
 	$(PYTHON) scripts/check_pod.py build/print/edunumbers-en-print.pdf
+	pdfinfo build/paperback/edunumbers-no-cover.pdf >/dev/null
+	pdfinfo build/paperback/edunumbers-en-cover.pdf >/dev/null
 
 quality:
 	@command -v epubcheck >/dev/null 2>&1 || { echo "epubcheck is required for publication QA"; exit 1; }
