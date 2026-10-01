@@ -16,23 +16,27 @@ permissions:
 
 jobs:
   qualify-no:
-    uses: Ploos-AS/publishing/.github/workflows/reusable-book-release.yml@e09d9af5e440d2aeeb075dd67f3b1d2b9b9aae2e
+    uses: Ploos-AS/publishing/.github/workflows/reusable-book-release.yml@c5af4434cd332872e1aa283e54398bad838859d6
     with:
-      publishing_ref: e09d9af5e440d2aeeb075dd67f3b1d2b9b9aae2e
+      publishing_ref: c5af4434cd332872e1aa283e54398bad838859d6
       metadata: publication.yaml
       isbn_registry: .ploos-publishing/isbn/registry.yaml
       build_config: book/publishing-build.yaml
       epub: build/epub/edunumbers-no.epub
       pdf: build/pdf/edunumbers-no.pdf
+      print_pdf: build/print/edunumbers-no-print.pdf
+      cover_pdf: build/paperback/edunumbers-no-cover.pdf
       artifact_name: edunumbers-no-qualified
 
   qualify-en:
-    uses: Ploos-AS/publishing/.github/workflows/reusable-book-release.yml@e09d9af5e440d2aeeb075dd67f3b1d2b9b9aae2e
+    uses: Ploos-AS/publishing/.github/workflows/reusable-book-release.yml@c5af4434cd332872e1aa283e54398bad838859d6
     with:
-      publishing_ref: e09d9af5e440d2aeeb075dd67f3b1d2b9b9aae2e
+      publishing_ref: c5af4434cd332872e1aa283e54398bad838859d6
       metadata: publication.yaml
       isbn_registry: .ploos-publishing/isbn/registry.yaml
       build_config: book/publishing-build.yaml
       epub: build/epub/edunumbers-en.epub
       pdf: build/pdf/edunumbers-en.pdf
+      print_pdf: build/print/edunumbers-en-print.pdf
+      cover_pdf: build/paperback/edunumbers-en-cover.pdf
       artifact_name: edunumbers-en-qualified
