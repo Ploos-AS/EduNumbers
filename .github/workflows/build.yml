@@ -17,7 +17,14 @@ jobs:
       - name: Install publishing toolchain
         run: |
           sudo apt-get update
-          sudo apt-get install -y pandoc texlive-xetex calibre poppler-utils epubcheck
+          sudo apt-get install -y pandoc texlive-xetex calibre poppler-utils epubcheck librsvg2-bin
+      - name: Checkout Ploos publishing tools
+        uses: actions/checkout@v4
+        with:
+          repository: Ploos-AS/publishing
+          path: .ploos-publishing
+      - name: Install publishing Python dependencies
+        run: python3 -m pip install -r .ploos-publishing/requirements.txt
       - name: Check sources
         run: make check
       - name: Test interactive tools
@@ -31,6 +38,10 @@ jobs:
           node tests/interactive-i18n.test.js
       - name: Build HTML, EPUB, PDF and Kindle
         run: make all
+      - name: Build paperback covers from actual page counts
+        run: make paperback
+      - name: Re-run POD QA with covers
+        run: make pod-qa
       - name: Upload course artifacts
         uses: actions/upload-artifact@v4
         with:
