@@ -14,11 +14,17 @@ Historisk finnes flere representasjoner.
 
 **Énerkomplement** inverterer alle bit for å lage den negative verdien. Også dette gir to nullrepresentasjoner.
 
-**Toerkomplement** er standardrepresentasjonen i moderne heltallsaritmetikk. For (n) bit er området
+**Toerkomplement** er den dominerende representasjonen for signed heltall i moderne datamaskiner. For `n` bit er området
 
-`-2^(n-1) ... 2^(n-1)-1`.
+`−2ⁿ⁻¹ ... 2ⁿ⁻¹ − 1`.
 
 For åtte bit er området −128 til 127.
+
+## Vanlig misoppfatning
+
+Den øverste biten i toerkomplement er ikke bare et separat «minusflagg» som kan fjernes fra resten av tallet. Hele bitmønsteret deltar i representasjonen.
+
+Det er også derfor området ikke er symmetrisk: åtte bit har én flere negativ verdi enn positive verdier.
 
 ## OBSERVE
 
