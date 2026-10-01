@@ -20,18 +20,24 @@ Subtraksjon kan utføres direkte med borrow eller som addisjon av en toerkomplem
 
 ## CPU-flagg
 
-Mange CPU-er registrerer egenskaper ved resultatet:
+Mange CPU-er registrerer egenskaper ved resultatet. Vanlige flagg er:
 
 - **C / Carry**: carry ut av toppbiten; relevant for unsigned aritmetikk.
 - **Z / Zero**: resultatet er null.
-- **N / Negative**: følger typisk toppbiten i resultatet.
+- **N / Negative**: følger ofte toppbiten i resultatet.
 - **V / Overflow**: signed-resultatet kan ikke representeres i valgt bredde.
 
-Eksempel: signed 8-bit `7F₁₆ + 01₁₆ = 80₁₆`. Her er resultatmønsteret −128, men det matematiske resultatet +128 passer ikke. V settes på CPU-er som har et overflow-flagg.
+Eksempel: signed 8-bit `7F₁₆ + 01₁₆ = 80₁₆`. Her er resultatmønsteret −128, men det matematiske resultatet +128 passer ikke. Et overflow-flagg settes på arkitekturer som tilbyr et slikt flagg etter denne operasjonen.
+
+## Vanlig misoppfatning
+
+Flaggnavn og nøyaktig oppførsel er ikke identiske på alle CPU-er. Du må lese instruksjonssettets dokumentasjon for å vite hvilke flagg en bestemt instruksjon endrer og hva de betyr der.
+
+Carry og signed overflow er heller ikke det samme: en operasjon kan sette det ene uten å sette det andre.
 
 ## OBSERVE
 
-Carry og overflow er ikke synonymer. De tolker samme bitoperasjon ut fra henholdsvis unsigned og signed aritmetikk.
+Carry og overflow tolker samme bitoperasjon ut fra henholdsvis unsigned og signed aritmetikk.
 
 ## EXPLAIN
 
@@ -39,4 +45,4 @@ CPU-flagg lar etterfølgende instruksjoner ta beslutninger uten å gjenta hele b
 
 ## Sjekk deg selv
 
-Beregn `FF₁₆ + 01₁₆` og diskuter C, Z og V for 8-bit aritmetikk.
+Beregn `FF₁₆ + 01₁₆` og diskuter C, Z og V for en 8-bit CPU som bruker de vanlige flaggdefinisjonene over.
