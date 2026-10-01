@@ -8,8 +8,8 @@ resource:
   title: "EduNumbers / Tallsystemer / Number Systems"
   type: course
   language:
-    - no
-    - en
+    - "no"
+    - "en"
   scope: "Number systems and numeric representations used in computing, from positional notation and base conversion through integer, fixed-point, floating-point, bit-level, memory, hardware, networking, file-format, debugging, and reverse-engineering applications."
   prerequisites:
     - "Basic integer arithmetic: addition, subtraction, multiplication, and division."
