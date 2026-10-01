@@ -34,10 +34,8 @@ print: build
 paperback: print
 	@command -v rsvg-convert >/dev/null 2>&1 || { echo "rsvg-convert is required for paperback covers"; exit 1; }
 	@test -f $(PUBLISHING_CLI) || { echo "Ploos publishing CLI not found: $(PUBLISHING_CLI)"; exit 1; }
-	@NO_PAGES=$(pdfinfo build/print/edunumbers-no-print.pdf | awk '/^Pages:/ {print $2}'); \
-	$(PYTHON) $(PUBLISHING_CLI) paperback-cover publication.yaml --language nb --pages $NO_PAGES --config $(PAPERBACK_PROFILE) -o build/paperback/edunumbers-no-cover.pdf
-	@EN_PAGES=$(pdfinfo build/print/edunumbers-en-print.pdf | awk '/^Pages:/ {print $2}'); \
-	$(PYTHON) $(PUBLISHING_CLI) paperback-cover publication.yaml --language en --pages $EN_PAGES --config $(PAPERBACK_PROFILE) -o build/paperback/edunumbers-en-cover.pdf
+	$(PYTHON) $(PUBLISHING_CLI) paperback-cover publication.yaml --language nb --pages `pdfinfo build/print/edunumbers-no-print.pdf | awk '/^Pages:/ {print $$2}'` --config $(PAPERBACK_PROFILE) -o build/paperback/edunumbers-no-cover.pdf
+	$(PYTHON) $(PUBLISHING_CLI) paperback-cover publication.yaml --language en --pages `pdfinfo build/print/edunumbers-en-print.pdf | awk '/^Pages:/ {print $$2}'` --config $(PAPERBACK_PROFILE) -o build/paperback/edunumbers-en-cover.pdf
 
 kindle: epub
 	@if command -v ebook-convert >/dev/null 2>&1; then \
