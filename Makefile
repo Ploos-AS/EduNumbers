@@ -4,8 +4,8 @@ PDF_ENGINE ?= xelatex
 NO_SRC := $(sort $(wildcard course/no/*.md))
 EN_SRC := $(sort $(wildcard course/en/*.md))
 
-.PHONY: all html epub pdf print kindle check validate quality clean
-all: check html epub pdf print kindle validate quality
+.PHONY: all html epub pdf print kindle check validate pod-qa quality clean
+all: check html epub pdf print kindle validate pod-qa quality
 
 build:
 	mkdir -p build/html/no build/html/en build/epub build/pdf build/print build/kindle
@@ -41,6 +41,10 @@ kindle: epub
 
 validate:
 	$(PYTHON) scripts/check_artifacts.py
+
+pod-qa: print
+	$(PYTHON) scripts/check_pod.py build/print/edunumbers-no-print.pdf
+	$(PYTHON) scripts/check_pod.py build/print/edunumbers-en-print.pdf
 
 quality:
 	@command -v epubcheck >/dev/null 2>&1 || { echo "epubcheck is required for publication QA"; exit 1; }
