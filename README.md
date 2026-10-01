@@ -4,6 +4,17 @@
 
 EduNumbers is a bilingual (Norwegian/English) course about number systems and numeric representation relevant to computing. It starts from first principles and develops toward practical use in programming, assembly language, digital electronics, debugging, file formats and networking.
 
+## Ploos Learning Standard
+
+EduNumbers is the first pilot project for the [Ploos Learning Standard (PLS)](https://github.com/Ploos-AS/learning-standard).
+
+- PLS specification: **0.1**
+- Entry level: **PLS-0**
+- Target level: **PLS-3**
+- Adoption status: **adopting**
+
+The machine-readable pedagogical contract is defined in [`pls.yaml`](pls.yaml) and validated in CI. PLS machine validation complements, but does not replace, pedagogical review.
+
 ## M0 goals
 
 - One canonical Markdown source tree per language.
