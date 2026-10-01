@@ -3,5 +3,5 @@ title: "Tallsystemer"
 author: "Per Gustav Ousdal"
 lang: nb-NO
 rights: "CC BY 4.0"
-subtitle: "Fra bits og hex til heltall, endianness og flyttall"
+subtitle: "Fra binært til heksadesimalt – forstå hvordan datamaskiner representerer tall"
 ...
