@@ -12,6 +12,8 @@ required = [
     Path("build/epub/edunumbers-en.epub"),
     Path("build/pdf/edunumbers-no.pdf"),
     Path("build/pdf/edunumbers-en.pdf"),
+    Path("build/print/edunumbers-no-print.pdf"),
+    Path("build/print/edunumbers-en-print.pdf"),
 ]
 
 for path in required:
