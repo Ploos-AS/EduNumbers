@@ -4,9 +4,7 @@ Binary, octal, decimal and hexadecimal dominate modern computing, but positional
 
 ## PREDICT
 
-What does `10` mean in base 3?
-
-It means three: `1 × 3¹ + 0 × 3⁰ = 3`.
+What do you think `10` means in base 3? Write down your answer before continuing.
 
 ## STEP — base 3
 
@@ -53,6 +51,8 @@ Computing history includes representations unlike today's most familiar binary c
 Historical data must therefore be interpreted according to the documented representation of the relevant machine rather than modern assumptions.
 
 ## OBSERVE
+
+For the prediction, `10₃` means three: `1 × 3¹ + 0 × 3⁰ = 3`.
 
 The notation `10` can represent 2, 3, 8, 10, 12, 16, 20, 36, 60 or another value depending on the base.
 
