@@ -4,11 +4,7 @@ Binær, oktal, desimal og heksadesimal dominerer moderne datateknikk, men et pos
 
 ## PREDICT
 
-Hva betyr `10` i base 3?
-
-Det betyr tre, fordi sifrene representerer:
-
-`1 × 3¹ + 0 × 3⁰ = 3`
+Hva tror du `10` betyr i base 3? Skriv svaret før du går videre.
 
 ## STEP — base 3
 
@@ -82,6 +78,8 @@ Datamaskinhistorien inneholder andre representasjoner enn dagens vanligste binæ
 Derfor bør historiske data alltid leses ut fra den aktuelle maskinens dokumenterte representasjon, ikke moderne antakelser.
 
 ## OBSERVE
+
+For forutsigelsen betyr `10₃` tre: `1 × 3¹ + 0 × 3⁰ = 3`.
 
 `10` kan representere 2, 3, 8, 10, 12, 16, 20, 36, 60 eller en annen verdi avhengig av basen.
 
