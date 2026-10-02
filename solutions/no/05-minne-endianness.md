@@ -2,7 +2,7 @@
 
 1. Åtte byte: `0x2008` til og med `0x200F`.
 2. `0x41A7`.
-3. (2^{20}=1,048,576) byteadresser, altså 1 MiB adresserbart byteområde.
+3. `2²⁰ = 1 048 576` byteadresser, altså 1 MiB adresserbart byteområde.
 4. `CA FE BA BE`.
 5. `BE BA FE CA`.
 6. Little-endian: `0x1234 = 4660`. Big-endian: `0x3412 = 13330`.
