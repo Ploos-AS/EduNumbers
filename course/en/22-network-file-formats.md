@@ -4,9 +4,7 @@ Network packets and binary files are sequences of bytes. Understanding them requ
 
 ## PREDICT
 
-The bytes `12 34` form a 16-bit integer. Is the value `0x1234` or `0x3412`?
-
-It depends on the format's byte order.
+The bytes `12 34` form a 16-bit integer. Is the value `0x1234` or `0x3412`? Write down your hypothesis before continuing.
 
 ## STEP — network byte order
 
@@ -49,6 +47,8 @@ Binary parsers move through structures using field offsets and lengths. A field 
 An incorrect width or offset shifts subsequent interpretation.
 
 ## OBSERVE
+
+There is no single answer to the prediction without a byte-order rule: big-endian gives `0x1234`, while little-endian gives `0x3412`.
 
 The same byte can be part of an IP address, character, flags, integer or opaque payload.
 
