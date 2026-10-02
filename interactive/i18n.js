@@ -3,7 +3,9 @@
   const supported=["no","en"];
   const params=new URLSearchParams(location.search);
   let lang=params.get("lang");
-  if(!supported.includes(lang)) lang=(navigator.language||"").toLowerCase().startsWith("no")?"no":"en";
+  const preferred=(navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language||""]);
+  const isNorwegian=tag=>/^(no|nb|nn)(-|$)/i.test(tag||"");
+  if(!supported.includes(lang)) lang=preferred.some(isNorwegian)?"no":"en";
   window.EDU_LANG=lang;
   window.eduText=(no,en)=>lang==="no"?no:en;
   document.documentElement.lang=lang;
