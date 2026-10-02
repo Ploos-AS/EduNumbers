@@ -38,7 +38,7 @@ Ser du bytefølgen `78 56 34 12`, kan den være 32-bitverdien `0x12345678` derso
 
 ## OBSERVE
 
-En hex dump viser byte i stigende minneadresse, ikke nødvendigvis sifrene i den rekkefølgen vi skriver den numeriske verdien.
+En hex-dump viser byte i stigende minneadresse, ikke nødvendigvis sifrene i den rekkefølgen vi skriver den numeriske verdien.
 
 ## EXPLAIN
 
