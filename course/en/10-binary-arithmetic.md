@@ -20,6 +20,8 @@ For signed eight-bit arithmetic, `7F₁₆ + 01₁₆ = 80₁₆`. The mathemati
 
 ## OBSERVE
 
+With only four bits, `1111₂ + 0001₂ = 1 0000₂`. The register retains the low four bits `0000₂`, while the fifth bit is the carry out.
+
 Carry and signed overflow answer different questions about the same bit-level result.
 
 ## EXPLAIN
