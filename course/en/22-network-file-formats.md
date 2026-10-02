@@ -26,7 +26,7 @@ Packets may contain versions, lengths, types, flags, ports, sequence numbers, ch
 
 ## Magic numbers and binary formats
 
-Binary formats often begin with characteristic signatures. For example, `89 50 4E 47 ...` begins with the signature bytes used by PNG.
+Binary formats often begin with characteristic signatures. For example, `89 50 4E 47 0D 0A 1A 0A` is the eight-byte signature at the start of a PNG file.
 
 A signature can aid identification, but does not by itself prove that the rest of a file is structurally valid.
 
