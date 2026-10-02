@@ -17,13 +17,13 @@ For `A=1010₂` og `B=1100₂`:
 - `A XOR B = 0110`
 - `NOT A = 0101` dersom bredden er fire bit
 
-## Shifts
+## Skift
 
 Venstreskift flytter bit mot høyere posisjoner. Innen fast bredde tilsvarer ett logisk venstreskift ofte multiplikasjon med 2 når ingen relevant bit går tapt.
 
 Logisk høyreskift fyller med null. Aritmetisk høyreskift bevarer fortegnsbiten på signed toerkomplement-maskiner.
 
-## Rotates
+## Rotasjon
 
 Rotate flytter bit rundt endene i stedet for å forkaste dem. Mange CPU-er har også rotate-through-carry, der carry-flagget inngår som en ekstra bit.
 
