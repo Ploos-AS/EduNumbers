@@ -16,6 +16,8 @@ BCD has been useful in calculators, clocks, counters, financial systems and hist
 
 ## OBSERVE
 
+With four bits per decimal digit, 4 is `0100` and 2 is `0010`. Packed BCD for 42 is therefore `0100 0010₂ = 0x42`.
+
 A byte `0x42` can mean ordinary integer 66 or packed-BCD decimal 42. The format supplies the meaning.
 
 ## EXPLAIN
