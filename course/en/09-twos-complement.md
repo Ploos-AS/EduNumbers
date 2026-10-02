@@ -22,6 +22,8 @@ Negation is invert-plus-one, but signed eight-bit −128 has no representable +1
 
 ## OBSERVE
 
+For the prediction, `11111011₂` is −5 in 8-bit two's complement: invert `00000101₂` to `11111010₂` and add 1 to obtain `11111011₂`.
+
 Carry and signed overflow answer different questions, so CPUs may expose separate flags for them.
 
 ## EXPLAIN
