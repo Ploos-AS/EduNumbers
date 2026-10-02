@@ -10,7 +10,7 @@ How can `11111011₂` represent −5?
 
 To encode −5 in eight bits, write +5 as `00000101`, invert the bits to `11111010`, then add one to obtain `11111011` or `FB₁₆`.
 
-For an (n)-bit pattern whose top bit is one, another interpretation method is unsigned-value minus (2^n): `251 - 256 = -5`.
+For an `n`-bit pattern whose top bit is one, another interpretation method is unsigned-value minus `2ⁿ`: `251 - 256 = -5`.
 
 ## Addition
 
@@ -26,7 +26,7 @@ Carry and signed overflow answer different questions, so CPUs may expose separat
 
 ## EXPLAIN
 
-Two's complement is naturally understood as modulo-(2^n) arithmetic plus a signed interpretation of the bit patterns.
+Two's complement is naturally understood as modulo-`2ⁿ` arithmetic plus a signed interpretation of the bit patterns.
 
 ## Check yourself
 
