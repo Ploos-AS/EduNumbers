@@ -20,6 +20,8 @@ A bit pattern does not have one inherent numeric meaning. `11111111₂` can be 2
 
 ## OBSERVE
 
+For the prediction, `10110₂ = 16 + 4 + 2 = 22₁₀`.
+
 Binary makes widths and representation explicit: one more bit doubles the number of available bit patterns.
 
 ## EXPLAIN
