@@ -8,7 +8,7 @@ Hvis en 32-bit verdi starter på adresse `0x1000`, hvilke byteadresser opptar de
 
 ## STEP
 
-En bytebredde på åtte bit gir 256 mulige rå bitmønstre. I byte-adresserbart minne øker adressen normalt med én for hver byte:
+I byte-adresserbart minne øker adressen normalt med én for hver byte:
 
 `0x1000, 0x1001, 0x1002, 0x1003`.
 
