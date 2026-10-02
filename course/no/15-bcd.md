@@ -28,6 +28,8 @@ BCD har vært viktig i kalkulatorer, klokker, tellere, økonomisystemer og eldre
 
 ## OBSERVE
 
+Med fire bit per desimalsiffer blir 4 kodet som `0100` og 2 som `0010`. Packed BCD for 42 blir derfor `0100 0010₂ = 0x42`.
+
 Hexdumpen `42` kan bety vanlig binær verdi 66 eller packed BCD-verdi 42. Formatkontekst avgjør.
 
 ## EXPLAIN
