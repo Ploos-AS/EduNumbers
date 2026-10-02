@@ -8,13 +8,13 @@ Will `255 + 1` always behave the same way in C and Python?
 
 ## STEP — literals
 
-Both languages support forms such as `0b101010`, `0x2A` and decimal `42`. In C, language type and literal rules determine the resulting type. Python `int` is not confined to a fixed 8-, 16-, 32- or 64-bit width.
+Hexadecimal and decimal literals such as `0x2A` and `42` work the same way in both languages. Binary literals such as `0b101010` are supported in Python and, from C23, in C (many compilers, including GCC and Clang, have long accepted them as an extension). In C, language type and literal rules determine the resulting type. Python `int` is not confined to a fixed 8-, 16-, 32- or 64-bit width.
 
 ## C: explicit widths
 
 When machine width matters, `<stdint.h>` provides types such as `uint8_t`, `uint16_t` and `int32_t` when the implementation has suitable exact-width integer types.
 
-Unsigned C arithmetic wraps modulo (2^n) for the type width. Do not assume the same rule for signed overflow; signed integer overflow is not defined by C as ordinary two's-complement wraparound.
+Unsigned C arithmetic wraps modulo `2ⁿ` for the type width. Do not assume the same rule for signed overflow; signed integer overflow is not defined by C as ordinary two's-complement wraparound.
 
 ## Python: arbitrary-size integers
 
