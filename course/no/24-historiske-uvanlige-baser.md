@@ -20,7 +20,7 @@ Ternære systemer er interessante fordi de viser at digital representasjon ikke 
 
 ## Base 12
 
-Base 12 har tolv sifferverdier per posisjon. Vi trenger derfor symboler for verdiene ti og elleve i tillegg til 0–9.
+Base 12 har tolv sifferverdier per posisjon. I dette kurset bruker vi `A` for verdien ti og `B` for verdien elleve, i tillegg til 0–9. Dermed er for eksempel `A₁₂ = 10₁₀` og `B₁₂ = 11₁₀`.
 
 Tolv har mange delere: 2, 3, 4 og 6. Det gjør enkelte brøker kompakte.
 
