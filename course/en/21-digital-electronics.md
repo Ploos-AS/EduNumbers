@@ -46,6 +46,8 @@ The byte `10100101₂ = 0xA5` might be a command, address, flags or payload. Pro
 
 ## OBSERVE
 
+For the prediction, `0x81 = 1000 0001₂`, so bits 7 and 0 are set.
+
 Hardware registers and protocols demonstrate the course's central idea: bit pattern plus representation rules produces meaning.
 
 ## EXPLAIN
