@@ -69,6 +69,31 @@ if set(no_ex) != set(no_sol):
 if set(en_ex) != set(en_sol):
     errors.append("English exercise/solution sheet numbers differ")
 
+# Notation / terminology lint: catch pseudo-LaTeX that Pandoc renders literally,
+# and mixed spellings in the Norwegian sources.
+PSEUDO_MATH = re.compile(r"\(\s*-?\d*\s*\^[^)]*\)|\(\s*[nfN]\s*\)|\^\{")
+NO_TERMS = [
+    (re.compile(r"two's complement", re.IGNORECASE), "use 'toerkomplement' in Norwegian prose"),
+    (re.compile(r"[Éé]nerkomplement"), "spell 'enerkomplement'"),
+    (re.compile(r"[Hh]ex dump"), "spell 'hex-dump'"),
+    (re.compile(r"misforståelse"), "use 'misoppfatning'"),
+    (re.compile(r"\bsifret\b"), "definite form is 'sifferet'"),
+]
+for directory in ["course", "exercises", "solutions"]:
+    for path in Path(directory).rglob("*.md"):
+        in_fence = False
+        for lineno, line in enumerate(path.read_text(encoding="utf-8").splitlines(), 1):
+            if line.lstrip().startswith("```"):
+                in_fence = not in_fence
+            if in_fence:
+                continue
+            if PSEUDO_MATH.search(re.sub(r"`[^`]*`", "", line)):
+                errors.append(f"{path}:{lineno}: pseudo-LaTeX notation (use `2ⁿ` or a code span)")
+            if "/no/" in path.as_posix() or path.parts[1:2] == ("no",):
+                for pattern, message in NO_TERMS:
+                    if pattern.search(line):
+                        errors.append(f"{path}:{lineno}: {message}")
+
 if errors:
     print("Source validation failed:")
     for error in errors:
