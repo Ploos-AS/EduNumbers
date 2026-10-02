@@ -72,7 +72,7 @@ Assemblerkilden inneholder menneskevennlige symboler og tallnotasjoner. CPU-en s
 
 ## EXPLAIN
 
-Tallforståelse er grunnleggende for assembly fordi operander, adresser, registre, masks, offsets og instruksjonsencoding alle er begrensede bitfelt.
+Tallforståelse er grunnleggende for assembly fordi operander, adresser, registre, masker, offsets og instruksjonsencoding alle er begrensede bitfelt.
 
 ## Sjekk deg selv
 
