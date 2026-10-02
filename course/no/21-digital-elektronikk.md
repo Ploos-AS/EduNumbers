@@ -77,6 +77,8 @@ Ved serielle protokoller må du også kjenne blant annet bitrekkefølge, klokkin
 
 ## OBSERVE
 
+For forutsigelsen er `0x81 = 1000 0001₂`, så bit 7 og bit 0 er satt.
+
 Hardware-registre og protokoller er praktiske eksempler på hele kursets hovedidé: bitmønster + avtalt representasjon = mening.
 
 ## EXPLAIN
