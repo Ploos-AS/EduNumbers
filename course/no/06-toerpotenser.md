@@ -37,6 +37,8 @@ Med `n` bit finnes `2ⁿ` mulige bitmønstre. Åtte bit gir derfor 256 mønstre,
 
 ## OBSERVE
 
+Åtte bit kan danne `2⁸ = 256` forskjellige bitmønstre, og dermed representere 256 forskjellige verdier når en bestemt tolkning er valgt.
+
 Hex passer også naturlig: ett hexsiffer er fire bit, to hexsifre er én byte, og fire hexsifre dekker 16 bit.
 
 ## EXPLAIN
