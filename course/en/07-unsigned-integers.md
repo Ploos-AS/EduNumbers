@@ -20,6 +20,8 @@ Fixed-width arithmetic cannot represent every integer. Under modulo-`2ⁿ` arith
 
 ## OBSERVE
 
+For an unsigned 8-bit integer, the maximum is `2⁸ − 1 = 255`, or `11111111₂ = FF₁₆`.
+
 The bits alone do not say “unsigned”. Their interpretation depends on the type and width supplied by context.
 
 ## EXPLAIN
