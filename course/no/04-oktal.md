@@ -36,4 +36,4 @@ Oktal er ikke et annet slags tall. Det er en annen representasjon av samme verdi
 
 1. Skriv `111111₂` i oktal.
 2. Skriv `17₈` i binær.
-3. Hvorfor er sifret 8 ugyldig i et oktalt tall?
+3. Hvorfor er sifferet 8 ugyldig i et oktalt tall?
