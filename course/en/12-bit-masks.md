@@ -16,6 +16,8 @@ Suppose bit 7 means ENABLE, bit 3 IRQ and bit 0 READY. Then `10001001₂` carrie
 
 ## OBSERVE
 
+Set bit 0 by OR-ing with `00000001₂`: `10100100₂ OR 00000001₂ = 10100101₂`. The other bits are unchanged.
+
 Hex makes masks compact: `11110000₂ = F0₁₆`, while `00001111₂ = 0F₁₆`.
 
 ## EXPLAIN
