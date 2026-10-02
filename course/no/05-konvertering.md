@@ -29,6 +29,8 @@ Mellom binær og hex grupperer vi fire bit: `0010 1101₂ = 2D₁₆`. Mellom bi
 
 ## OBSERVE
 
+Nei: `1010₂ = 12₈ = 10₁₀ = A₁₆`. De fire skrivemåtene representerer samme verdi i forskjellige baser.
+
 Binær fungerer som en nyttig bro mellom oktal og hex fordi gruppestørrelsene er faste.
 
 ## EXPLAIN
