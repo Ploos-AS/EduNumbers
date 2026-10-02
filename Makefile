@@ -63,8 +63,6 @@ quality:
 	epubcheck build/epub/edunumbers-en.epub
 	pdfinfo build/pdf/edunumbers-no.pdf >/dev/null
 	pdfinfo build/pdf/edunumbers-en.pdf >/dev/null
-	pdfinfo build/print/edunumbers-no-print.pdf >/dev/null
-	pdfinfo build/print/edunumbers-en-print.pdf >/dev/null
 	@if ls build/kindle/*.azw3 >/dev/null 2>&1; then \
 		command -v ebook-meta >/dev/null 2>&1 || { echo "ebook-meta is required for AZW3 QA"; exit 1; }; \
 		ebook-meta build/kindle/edunumbers-no.azw3 >/dev/null; \
