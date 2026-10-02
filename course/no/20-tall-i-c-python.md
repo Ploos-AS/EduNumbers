@@ -87,6 +87,8 @@ I C brukes formatmakroer fra `<inttypes.h>` når portabel formatering av fixed-w
 
 ## OBSERVE
 
+Nei. Resultatet avhenger av type og språkregler. Python-heltall vokser normalt etter behov, mens aritmetikk i en begrenset C-heltallstype kan ha andre regler. Derfor må både type og språksemantikk være kjent.
+
 Kildekoden `0xFF` beskriver en numerisk literal. Om du senere tolker eller lagrer den som 8-bit signed, 8-bit unsigned eller en større type er en egen beslutning.
 
 ## EXPLAIN
