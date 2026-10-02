@@ -10,8 +10,6 @@ Du finner bytene:
 
 Er dette seks heltall, maskinkode eller tekst?
 
-Uten kontekst kan flere tolkninger være mulige. Som ASCII/UTF-8 ser de ut som `Hello` etterfulgt av en nullbyte.
-
 ## STEP — start med observasjon
 
 Skill mellom det du **ser** og det du **antar**.
@@ -99,6 +97,8 @@ En effektiv metode i egne systemer og testdata er å endre én kjent verdi om ga
 Hvis et flagg slås på og nøyaktig én bit endres, har vi et godt spor. Hvis en teller økes og et bestemt felt følger den, lærer vi mer om representasjonen.
 
 ## OBSERVE
+
+For forutsigelsen er flere tolkninger mulige uten kontekst. Som ASCII/UTF-8 gir `48 65 6C 6C 6F 00` teksten `Hello` etterfulgt av en nullbyte; det er en sterk hypotese, ikke et bevis alene.
 
 Reverse engineering av data handler ofte mindre om å «gjette riktig» med én gang og mer om å formulere hypoteser som kan motbevises eller styrkes.
 
