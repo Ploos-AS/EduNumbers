@@ -8,17 +8,17 @@ Hvis et 8-bit mønster har fire heltallsbit og fire brøkbit, hvilken verdi har 
 
 ## STEP
 
-I et unsigned Q4.4-lignende format har de fire nederste bitene vektene (2^{-1},2^{-2},2^{-3},2^{-4}).
+I et unsigned Q4.4-format (fire heltallsbit og fire brøkbit) har de fire nederste bitene vektene `2⁻¹`, `2⁻²`, `2⁻³` og `2⁻⁴`.
 
 `0011.1000₂ = 3 + 1/2 = 3.5`.
 
-Det lagrede heltallet er 56. Skalafaktoren er (2^4=16), så den virkelige verdien er `56 / 16 = 3.5`.
+Det lagrede heltallet er 56. Skalafaktoren er `2⁴ = 16`, så den virkelige verdien er `56 / 16 = 3.5`.
 
-Med (f) brøkbit er oppløsningen (2^{-f}).
+Med `f` brøkbit er oppløsningen `1 / 2^f`.
 
 ## Signed fixed-point
 
-Toerkomplement kan kombineres med et fast binærpunkt. Bitmønsteret tolkes først som et signed heltall og skaleres deretter med (2^{-f}).
+Toerkomplement kan kombineres med et fast binærpunkt. Bitmønsteret tolkes først som et signed heltall og skaleres deretter med `1 / 2^f`.
 
 ## Fordeler og begrensninger
 
