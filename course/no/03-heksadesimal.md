@@ -41,7 +41,7 @@ Hex endrer ikke verdien. Det er en kompakt skrivemåte for binære bitmønstre, 
 
 Denne egenskapen er grunnen til at hex brukes så mye i adresser, maskinkode, debugger-visninger, registerverdier, farger, protokoller og filformater.
 
-## Vanlig misforståelse
+## Vanlig misoppfatning
 
 Bokstavene `A`–`F` er ikke «tekst» inne i tallet. De er sifre med verdiene 10–15 i base 16.
 
