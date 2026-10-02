@@ -36,6 +36,8 @@ C offers conversion routines such as `strtoul`; portable formatting of fixed-wid
 
 ## OBSERVE
 
+No. The result depends on type and language rules. Python integers normally grow as needed, while arithmetic involving bounded C integer types follows different rules. Both the type and language semantics matter.
+
 The source literal `0xFF` is a numeric value. Storing or interpreting it as an 8-bit signed value, 8-bit unsigned value or wider type is a separate operation.
 
 ## EXPLAIN
