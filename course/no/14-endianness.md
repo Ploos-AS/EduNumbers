@@ -38,6 +38,8 @@ Ser du bytefølgen `78 56 34 12`, kan den være 32-bitverdien `0x12345678` derso
 
 ## OBSERVE
 
+For forutsigelsen kan `0x12345678` ligge som `12 34 56 78` i big-endian eller `78 56 34 12` i little-endian fra den laveste adressen. Byteorden er en del av representasjonen.
+
 En hex-dump viser byte i stigende minneadresse, ikke nødvendigvis sifrene i den rekkefølgen vi skriver den numeriske verdien.
 
 ## EXPLAIN
