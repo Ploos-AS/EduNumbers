@@ -28,11 +28,11 @@ A value such as `0x82` is only meaningful once its register and field definition
 
 ## ADC and DAC
 
-An idealized N-bit ADC provides `2ᴺ` digital codes. A 10-bit converter has 1024 codes, usually numbered 0 through 1023.
+An idealized N-bit ADC provides `2^N` digital codes. A 10-bit converter has 1024 codes, usually numbered 0 through 1023.
 
 A simple idealized unipolar conversion can be approximated by
 
-`V ≈ code / (2ᴺ - 1) × Vref`
+`V ≈ code / (2^N - 1) × Vref`
 
 but the exact transfer function, reference, tolerances and endpoint conventions come from the datasheet. The formula above is therefore a learning model, not a universal ADC law.
 
