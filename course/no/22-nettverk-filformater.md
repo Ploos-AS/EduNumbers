@@ -59,11 +59,11 @@ Binære filformater starter ofte med karakteristiske byte som hjelper programvar
 
 For eksempel kan en fil begynne:
 
-`89 50 4E 47 ...`
+`89 50 4E 47 0D 0A 1A 0A`
 
-De fire første bytene er en signatur brukt av PNG-formatet. En signatur er nyttig identifikasjon, men alene beviser den ikke at resten av filen er gyldig.
+Dette er den åtte byte lange signaturen i starten av en PNG-fil. En signatur er nyttig identifikasjon, men alene beviser den ikke at resten av filen er gyldig.
 
-## Fra hex dump til struktur
+## Fra hex-dump til struktur
 
 Tenk denne fiktive posten:
 
@@ -101,7 +101,7 @@ Samme byte kan representere del av en IP-adresse, et tegn, et flaggfelt, et helt
 
 ## EXPLAIN
 
-Hex dumpen viser lagrede eller overførte byte. Format- eller protokollspesifikasjonen forteller hvordan byte skal grupperes og tolkes.
+Hex-dumpen viser lagrede eller overførte byte. Format- eller protokollspesifikasjonen forteller hvordan byte skal grupperes og tolkes.
 
 ## Sjekk deg selv
 
