@@ -47,6 +47,8 @@ Da er byten ikke «ett tall» i vanlig forstand, men flere felt pakket sammen.
 
 ## OBSERVE
 
+Nei. `01000001₂ = 0x41` er 65 som unsigned heltall, men samme mønster kan for eksempel representere ASCII-tegnet `A`.
+
 `0x41` kan tolkes som unsigned 65, signed 65, ASCII-tegnet A, deler av en instruksjon eller et felt i en struktur. Konteksten bestemmer betydningen.
 
 ## EXPLAIN
