@@ -8,9 +8,9 @@ With four integer bits and four fractional bits, what does `00111000₂` represe
 
 ## STEP
 
-Interpreted as `0011.1000₂`, the value is 3.5. The stored integer is 56 and four fractional bits imply division by (2^4=16).
+Interpreted as `0011.1000₂`, the value is 3.5. The stored integer is 56 and four fractional bits imply division by `2⁴ = 16`.
 
-With (f) fractional bits, resolution is (2^{-f}).
+With `f` fractional bits, the resolution is `1 / 2^f`.
 
 Two's-complement signed integers can use the same scaling rule for signed fixed-point values.
 
