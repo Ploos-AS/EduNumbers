@@ -12,7 +12,7 @@ In byte-addressable memory the address normally increases by one per byte: `0x10
 
 An **offset** is a displacement relative to a base address. Base `0x2000` plus offset `0x34` gives `0x2034`.
 
-With (n) address bits, (2^n) address patterns exist. On a byte-addressed system, 16 address bits can identify 65,536 byte locations.
+With `n` address bits, `2ⁿ` address patterns exist. On a byte-addressed system, 16 address bits can identify 65,536 byte locations.
 
 ## Alignment
 
