@@ -20,6 +20,8 @@ Binært kan samme verdi grupperes tre og tre bit:
 
 ## OBSERVE
 
+For forutsigelsen får vi `111₂ = 7₈`, `101₂ = 5₈` og `010₂ = 2₈`. Dermed er `111 101 010₂ = 752₈`.
+
 Tre bit kan uttrykke verdiene 0–7. Derfor passer én gruppe på tre bit perfekt i ett oktalsiffer.
 
 Oktal dukker fortsatt opp i Unix-lignende systemer. Filmodusen `755` består av tre grupper med rettighetsbit: eier, gruppe og andre.
