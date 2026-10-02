@@ -12,7 +12,7 @@ Can `11111111₂` mean both 255 and −1?
 
 **Ones' complement** forms a negative value by inverting every bit and also has two zero encodings.
 
-**Two's complement** is the standard modern integer representation. For (n) bits its range is `-2^(n-1) ... 2^(n-1)-1`. Eight bits therefore cover −128 through 127.
+**Two's complement** is the standard modern integer representation. For `n` bits its range is `−2ⁿ⁻¹ ... 2ⁿ⁻¹ − 1`. Eight bits therefore cover −128 through 127.
 
 ## OBSERVE
 
