@@ -24,8 +24,6 @@ jobs:
       build_config: book/publishing-build.yaml
       epub: build/epub/edunumbers-no.epub
       pdf: build/pdf/edunumbers-no.pdf
-      print_pdf: build/print/edunumbers-no-print.pdf
-      cover_pdf: build/paperback/edunumbers-no-cover.pdf
       artifact_name: edunumbers-no-qualified
 
   qualify-en:
@@ -37,6 +35,4 @@ jobs:
       build_config: book/publishing-build.yaml
       epub: build/epub/edunumbers-en.epub
       pdf: build/pdf/edunumbers-en.pdf
-      print_pdf: build/print/edunumbers-en-print.pdf
-      cover_pdf: build/paperback/edunumbers-en-cover.pdf
       artifact_name: edunumbers-en-qualified
