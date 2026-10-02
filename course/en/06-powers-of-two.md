@@ -1,6 +1,6 @@
 # Powers of two
 
-Computing repeatedly uses quantities of the form (2^n).
+Computing repeatedly uses quantities of the form `2ⁿ`.
 
 ## PREDICT
 
@@ -8,9 +8,9 @@ How many distinct values can eight bits represent?
 
 ## STEP
 
-Useful landmarks include (2^4=16), (2^8=256), (2^{10}=1024), (2^{16}=65536), (2^{20}=1048576), and (2^{32}=4294967296).
+Useful landmarks include `2⁴ = 16`, `2⁸ = 256`, `2¹⁰ = 1024`, `2¹⁶ = 65536`, `2²⁰ = 1048576` and `2³² = 4294967296`.
 
-With (n) bits there are (2^n) bit patterns. Eight bits therefore provide 256 patterns, representing 0 through 255 when interpreted as unsigned.
+With `n` bits there are `2ⁿ` bit patterns. Eight bits therefore provide 256 patterns, representing 0 through 255 when interpreted as unsigned.
 
 `1 KiB = 1024 bytes`; the SI quantity `1 kB = 1000 bytes`. MiB and GiB are corresponding binary prefixes.
 
