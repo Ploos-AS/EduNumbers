@@ -10,7 +10,9 @@ What decimal value does `10110₂` represent?
 
 From right to left the weights are 1, 2, 4, 8, 16 and so on. Thus `10110₂ = 16 + 4 + 2 = 22₁₀`.
 
-A binary digit is a **bit**. Eight bits are commonly grouped into a byte. Wider machine values are often described by an explicit bit width.
+## Bits, nibbles and bytes
+
+A **bit** can hold 0 or 1. Four bits are often called a **nibble**. Eight bits normally form a **byte**. Wider machine values are described by an explicit bit width.
 
 With `n` bits there are `2ⁿ` possible patterns. Four bits give 16 patterns; eight bits give 256.
 
