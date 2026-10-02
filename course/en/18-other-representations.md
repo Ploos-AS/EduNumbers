@@ -30,6 +30,8 @@ One byte can contain several bit fields. A hypothetical status register might us
 
 ## OBSERVE
 
+No. `01000001₂ = 0x41` is unsigned integer 65, but the same pattern can, for example, represent the ASCII character `A`.
+
 `0x41` may be unsigned 65, signed 65, ASCII A, part of an instruction or a field inside a larger structure. Context supplies meaning.
 
 ## EXPLAIN
