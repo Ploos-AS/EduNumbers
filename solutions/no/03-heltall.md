@@ -1,6 +1,6 @@
 # Løsninger: heltallsrepresentasjon
 
-1. (2^{10}=1024) mønstre: 0–1023.
+1. `2¹⁰ = 1024` mønstre: 0–1023.
 2. `FE₁₆` er 254 unsigned og −2 signed 8-bit toerkomplement.
 3. +42 er `00101010₂`; inverter + 1 gir `11010110₂ = D6₁₆`.
 4. 270 modulo 256 = 14.
