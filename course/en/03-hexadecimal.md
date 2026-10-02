@@ -24,6 +24,8 @@ The letters A–F are hexadecimal digits representing the values 10–15. They a
 
 ## OBSERVE
 
+For the prediction, `A₁₆ = 1010₂` and `5₁₆ = 0101₂`, so `A5₁₆ = 1010 0101₂`.
+
 Two hex digits represent one byte. This makes hex especially convenient for memory dumps, addresses, machine code and bit masks.
 
 ## EXPLAIN
