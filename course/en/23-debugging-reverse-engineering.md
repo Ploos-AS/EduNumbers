@@ -6,8 +6,6 @@ When software crashes, a file is undocumented or an old system lacks specificati
 
 You find the bytes `48 65 6C 6C 6F 00`. Are they integers, machine code or text?
 
-Without context, several interpretations may be possible. As ASCII/UTF-8 they resemble `Hello` followed by a zero byte.
-
 ## STEP — observe before assuming
 
 Separate observations from hypotheses. A hex editor or memory dump may show offsets or addresses, hexadecimal bytes, a text column and highlighted regions.
@@ -51,6 +49,8 @@ With systems and test data you control, changing one known value at a time and c
 If enabling a flag changes exactly one bit, that is useful evidence. If changing a counter tracks one field, its representation becomes clearer.
 
 ## OBSERVE
+
+Several interpretations are possible without context. As ASCII/UTF-8, `48 65 6C 6C 6F 00` gives `Hello` followed by a zero byte; that is a strong hypothesis, not proof by itself.
 
 Data reverse engineering is often a process of constructing hypotheses that can be weakened or strengthened rather than instantly guessing the correct format.
 
