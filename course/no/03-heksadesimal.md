@@ -37,6 +37,8 @@ Omvendt kan hvert hex-siffer ekspanderes til fire bits. For eksempel:
 
 ## OBSERVE
 
+For forutsigelsen gir gruppene `1101₂ = D₁₆` og `0010₂ = 2₁₆`, altså `1101 0010₂ = D2₁₆`.
+
 Hex endrer ikke verdien. Det er en kompakt skrivemåte for binære bitmønstre, og koblingen er eksakt fordi `16 = 2⁴`.
 
 Denne egenskapen er grunnen til at hex brukes så mye i adresser, maskinkode, debugger-visninger, registerverdier, farger, protokoller og filformater.
