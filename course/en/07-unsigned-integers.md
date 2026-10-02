@@ -8,7 +8,7 @@ What is the largest value that fits in eight bits?
 
 ## STEP
 
-With (n) bits there are (2^n) patterns, giving the unsigned range `0 ... 2^n - 1`.
+With `n` bits there are `2ⁿ` patterns, giving the unsigned range `0 ... 2ⁿ − 1`.
 
 Eight bits represent 0–255, 16 bits 0–65,535, and 32 bits 0–4,294,967,295.
 
@@ -16,7 +16,7 @@ Eight bits represent 0–255, 16 bits 0–65,535, and 32 bits 0–4,294,967,295.
 
 ## Overflow and wraparound
 
-Fixed-width arithmetic cannot represent every integer. Under modulo-(2^n) arithmetic, keeping only eight bits makes `255 + 1` wrap to 0.
+Fixed-width arithmetic cannot represent every integer. Under modulo-`2ⁿ` arithmetic, keeping only eight bits makes `255 + 1` wrap to 0.
 
 ## OBSERVE
 
