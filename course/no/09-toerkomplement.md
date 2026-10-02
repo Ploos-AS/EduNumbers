@@ -34,6 +34,8 @@ Negering gjøres med invertering + 1. Men −128 i signed 8-bit har ingen positi
 
 ## OBSERVE
 
+For forutsigelsen er `11111011₂` mønsteret for −5 i 8-bit toerkomplement: inverter `00000101₂` til `11111010₂` og legg til 1, som gir `11111011₂`.
+
 Carry og signed overflow er ikke det samme. CPU-er kan ha separate flagg fordi unsigned og signed tolkning stiller forskjellige spørsmål til samme bitresultat.
 
 ## EXPLAIN
