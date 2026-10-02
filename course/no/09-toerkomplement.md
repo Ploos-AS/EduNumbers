@@ -16,9 +16,9 @@ For å finne representasjonen av −5 i åtte bit:
 
 Dermed er `FB₁₆` signed 8-bit −5.
 
-En rask matematisk tolkning av et mønster med toppbit 1 er å ta den unsigned verdien og trekke fra (2^n):
+En rask matematisk tolkning av et mønster med toppbit 1 er å ta den unsigned verdien og trekke fra `2ⁿ`:
 
-`251 - 256 = -5`.
+`251 − 256 = −5`.
 
 ## Addisjon
 
@@ -38,7 +38,7 @@ Carry og signed overflow er ikke det samme. CPU-er kan ha separate flagg fordi u
 
 ## EXPLAIN
 
-Toerkomplement er best forstått som aritmetikk modulo (2^n), kombinert med en signed tolkning av halvparten av bitmønstrene.
+Toerkomplement er best forstått som aritmetikk modulo `2ⁿ`, kombinert med en signed tolkning av halvparten av bitmønstrene.
 
 ## Sjekk deg selv
 
