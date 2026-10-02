@@ -20,6 +20,8 @@ Fixed-point offers predictable resolution and efficient arithmetic on systems wi
 
 ## OBSERVE
 
+With four fractional bits, place the binary point after the upper four bits: `0011.1000₂ = 3 + 1/2 = 3.5`.
+
 No physical binary-point symbol is stored. Its location belongs to the format definition.
 
 ## EXPLAIN
