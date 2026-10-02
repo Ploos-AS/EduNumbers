@@ -20,6 +20,8 @@ Architectures may prefer or require multi-byte values to begin at particular add
 
 ## OBSERVE
 
+The predicted 32-bit value occupies four bytes: `0x1000`, `0x1001`, `0x1002` and `0x1003`.
+
 Hexadecimal maps cleanly to address bits: a 16-bit address is four hex digits from `0000` through `FFFF`.
 
 ## EXPLAIN
