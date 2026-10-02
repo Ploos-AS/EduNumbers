@@ -18,6 +18,8 @@ The mapping is exact because four bits have `2⁴ = 16` possible patterns, exact
 
 Programming languages commonly use the `0xA5` notation. Assemblers and debuggers may also use forms such as `$A5` or an `h` suffix.
 
+The reverse conversion is equally direct: expand every hexadecimal digit to four bits. For example, `3A₁₆ = 0011 1010₂`.
+
 ## Common misconception
 
 The letters A–F are hexadecimal digits representing the values 10–15. They are not text characters merely because letters are used as symbols.
