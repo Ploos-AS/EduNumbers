@@ -77,7 +77,7 @@ Offset `0x0A–0x0B`:
 
 `FE FF`
 
-Little-endian unsigned gir `65534`. Tolket som signed 16-bit two's complement blir samme bitmønster `-2`.
+Little-endian unsigned gir `65534`. Tolket som signed 16-bit toerkomplement blir samme bitmønster `−2`.
 
 Dette demonstrerer hvorfor signedness må være del av formatbeskrivelsen.
 
@@ -112,7 +112,7 @@ En konsistent modell er:
 | 0x05 | 1 | flags | `0xA5` |
 | 0x06 | 2 | length | 12, little-endian |
 | 0x08 | 2 | id | `0x1234` |
-| 0x0A | 2 | delta | -2 signed |
+| 0x0A | 2 | delta | −2 signed |
 | 0x0C | 8 | name | `PLOOS`, null-padded |
 | 0x14 | 4 | value | `0x12345678` |
 
