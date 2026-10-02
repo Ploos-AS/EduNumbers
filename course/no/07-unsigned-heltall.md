@@ -35,6 +35,8 @@ For eksempel blir `255 + 1 = 0` med 8-bit unsigned wraparound.
 
 ## OBSERVE
 
+For et unsigned 8-bit heltall er maksimum `2⁸ − 1 = 255`, altså `11111111₂ = FF₁₆`.
+
 Bitmønsteret endrer ikke betydning av seg selv. `FF₁₆` er bare 255 dersom vi vet at mønsteret tolkes som unsigned.
 
 ## EXPLAIN
