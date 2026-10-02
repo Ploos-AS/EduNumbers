@@ -14,4 +14,27 @@ Programming and hardware examples are used to show where the representations app
 
 ## Learning outcomes
 
-By the end of the course you should be able to read and convert common bases, reason about integer widths and two's complement, use bitwise operations, inspect memory and hex dumps, explain byte order, and recognize common numeric representations in programming, assembly language, hardware registers, protocols and file formats.
+By the end of the course you should be able to:
+
+- read and write binary, decimal, octal and hexadecimal numbers;
+- convert between bases;
+- understand unsigned and signed integers;
+- explain two's complement, overflow and wraparound;
+- use bitwise operations and bit masks;
+- read addresses and simple hex dumps;
+- explain little-endian and big-endian byte order;
+- understand the basic ideas behind fixed-point, BCD and IEEE 754;
+- recognize numeric representations in assembly language, C, Python, registers, protocols and file formats.
+
+## First idea: the number is not its notation
+
+The number twelve can be written in several ways:
+
+- decimal: `12`
+- binary: `1100₂`
+- hexadecimal: `C₁₆`
+- octal: `14₈`
+
+The value is the same. The representation is different.
+
+This distinction is the foundation for the rest of the course.
