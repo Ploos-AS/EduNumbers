@@ -16,6 +16,8 @@ Logical shifts move bits and fill with zero. Arithmetic right shift commonly pre
 
 ## OBSERVE
 
+For the prediction, compare corresponding bits: `1010 AND 1100 = 1000`.
+
 Width is essential: NOT zero has a different numerical result at 8 and 16 bits.
 
 ## EXPLAIN
