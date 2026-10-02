@@ -8,7 +8,7 @@ Translate `111 101 010₂` one three-bit group at a time.
 
 ## STEP
 
-Base-8 positions have weights (8^0, 8^1, 8^2,dots). For example, `572₈ = 378₁₀`, and `101 111 010₂ = 572₈`.
+Base-8 positions have weights `8⁰`, `8¹`, `8²` and so on. For example, `572₈ = 378₁₀`, and `101 111 010₂ = 572₈`.
 
 Octal remains visible in Unix-style permission notation such as `755`, where each digit summarizes three permission bits.
 
