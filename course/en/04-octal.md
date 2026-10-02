@@ -14,6 +14,8 @@ Octal remains visible in Unix-style permission notation such as `755`, where eac
 
 ## OBSERVE
 
+For the prediction, `111₂ = 7₈`, `101₂ = 5₈` and `010₂ = 2₈`, so `111 101 010₂ = 752₈`.
+
 Three bits represent values 0–7, exactly the digit range of octal.
 
 ## EXPLAIN
