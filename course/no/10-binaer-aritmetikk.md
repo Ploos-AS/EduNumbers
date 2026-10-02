@@ -37,6 +37,8 @@ Carry og signed overflow er heller ikke det samme: en operasjon kan sette det en
 
 ## OBSERVE
 
+Med bare fire bit blir `1111₂ + 0001₂ = 1 0000₂`. Registeret beholder de fire lave bitene `0000₂`, mens den femte biten blir carry ut.
+
 Carry og overflow tolker samme bitoperasjon ut fra henholdsvis unsigned og signed aritmetikk.
 
 ## EXPLAIN
