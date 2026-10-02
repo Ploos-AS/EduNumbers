@@ -22,6 +22,8 @@ A dump showing `78 56 34 12` can encode the 32-bit number `0x12345678` when the 
 
 ## OBSERVE
 
+For the prediction, `0x12345678` may occupy memory as `12 34 56 78` in big-endian or `78 56 34 12` in little-endian order from the lowest address. Byte order is part of the representation.
+
 A hex dump normally displays bytes in increasing memory-address order, which need not match the written digit order of a multi-byte number.
 
 ## EXPLAIN
