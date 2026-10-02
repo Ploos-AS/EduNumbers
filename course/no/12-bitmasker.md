@@ -31,6 +31,8 @@ Når du tester en bit med `value AND MASK`, er poenget vanligvis å sjekke om re
 
 ## OBSERVE
 
+For å sette bit 0 uten å endre de andre bitene kan vi OR-e med masken `00000001₂`: `10100100₂ OR 00000001₂ = 10100101₂`.
+
 Hex gjør masker lettere å lese: `11110000₂ = F0₁₆` og `00001111₂ = 0F₁₆`.
 
 ## EXPLAIN
