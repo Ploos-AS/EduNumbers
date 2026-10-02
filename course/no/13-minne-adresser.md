@@ -32,6 +32,8 @@ Et adresserom er ikke det samme som mengden fysisk RAM som faktisk er installert
 
 ## OBSERVE
 
+For forutsigelsen opptar 32-bit-verdien fire byte: `0x1000`, `0x1001`, `0x1002` og `0x1003`.
+
 Hex passer svært godt til adresser fordi hvert hexsiffer er fire bit. En 16-bit adresse kan skrives med fire hexsifre fra `0000` til `FFFF`.
 
 ## EXPLAIN
