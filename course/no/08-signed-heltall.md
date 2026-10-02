@@ -12,7 +12,7 @@ Historisk finnes flere representasjoner.
 
 **Sign-magnitude** bruker én bit som fortegn og resten som størrelse. Det gir både +0 og −0.
 
-**Énerkomplement** inverterer alle bit for å lage den negative verdien. Også dette gir to nullrepresentasjoner.
+**Enerkomplement** inverterer alle bit for å lage den negative verdien. Også dette gir to nullrepresentasjoner.
 
 **Toerkomplement** er den dominerende representasjonen for signed heltall i moderne datamaskiner. For `n` bit er området
 
