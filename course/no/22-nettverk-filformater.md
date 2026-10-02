@@ -4,9 +4,7 @@ Nettverkspakker og binære filer består av byte. For å forstå dem må vi vite
 
 ## PREDICT
 
-Bytefølgen `12 34` representerer et 16-bit tall. Er verdien `0x1234` eller `0x3412`?
-
-Svaret er: det avhenger av formatets byteorden.
+Bytefølgen `12 34` representerer et 16-bit tall. Er verdien `0x1234` eller `0x3412`? Skriv hypotesen din før du går videre.
 
 ## STEP — nettverksbyteorden
 
@@ -96,6 +94,8 @@ Et felt som starter ved offset 4 og er 2 byte langt bruker byte 4 og 5. Neste fe
 Feil bredde eller feil offset forskyver resten av tolkningen.
 
 ## OBSERVE
+
+For forutsigelsen finnes det ikke ett riktig svar uten byteorden: big-endian gir `0x1234`, mens little-endian gir `0x3412`.
 
 Samme byte kan representere del av en IP-adresse, et tegn, et flaggfelt, et heltall eller rå payload.
 
