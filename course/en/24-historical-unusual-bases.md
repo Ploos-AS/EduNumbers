@@ -16,7 +16,7 @@ Ternary systems demonstrate that digital representation is not mathematically re
 
 ## Base 12
 
-Base 12 requires digit values for ten and eleven in addition to 0–9. Twelve has several divisors — 2, 3, 4 and 6 — so some fractions are compact.
+Base 12 requires digit values for ten and eleven in addition to 0–9. In this course we use `A` for ten and `B` for eleven, so `A₁₂ = 10₁₀` and `B₁₂ = 11₁₀`. Twelve has several divisors — 2, 3, 4 and 6 — so some fractions are compact.
 
 One half in base 12 is `0.6₁₂`, because 6/12 = 1/2.
 
