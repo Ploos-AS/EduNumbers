@@ -29,6 +29,8 @@ Rotate flytter bit rundt endene i stedet for å forkaste dem. Mange CPU-er har o
 
 ## OBSERVE
 
+For forutsigelsen sammenlignes bitene parvis: `1010 AND 1100 = 1000`.
+
 Alle operasjonene må forstås med en eksplisitt bitbredde. `NOT 00000000` er `11111111` i åtte bit, men en annen verdi dersom bredden er 16 bit.
 
 ## EXPLAIN
