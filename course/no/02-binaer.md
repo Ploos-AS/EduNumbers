@@ -26,6 +26,8 @@ Med `n` bits finnes `2ⁿ` forskjellige bitmønstre. Åtte bits gir derfor 256 m
 
 ## OBSERVE
 
+For forutsigelsen er `10110110₂ = 128 + 32 + 16 + 4 + 2 = 182₁₀` som unsigned heltall.
+
 256 mulige mønstre betyr ikke at det største representerte tallet alltid er 255. Det gjelder bare når de åtte bitene tolkes som et unsigned heltall.
 
 Det samme mønsteret kan senere tolkes som signed heltall, tegn, deler av en instruksjon, bitfelt eller noe helt annet.
