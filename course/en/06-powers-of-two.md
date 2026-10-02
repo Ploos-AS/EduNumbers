@@ -16,6 +16,8 @@ With `n` bits there are `2ⁿ` bit patterns. Eight bits therefore provide 256 pa
 
 ## OBSERVE
 
+Eight bits form `2⁸ = 256` distinct bit patterns and can therefore represent 256 distinct values once an interpretation is chosen.
+
 One hexadecimal digit is four bits, two hexadecimal digits are one byte, and four hexadecimal digits span 16 bits.
 
 ## EXPLAIN
