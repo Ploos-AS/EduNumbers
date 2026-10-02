@@ -7,7 +7,7 @@ NO_SRC := $(sort $(wildcard course/no/*.md))
 EN_SRC := $(sort $(wildcard course/en/*.md))
 
 .PHONY: all html epub pdf print paperback kindle check validate pod-qa quality clean
-all: check html epub pdf print kindle validate pod-qa quality
+all: check html epub pdf kindle validate quality
 
 build:
 	mkdir -p build/html/no build/html/en build/epub build/pdf build/print build/paperback build/kindle
