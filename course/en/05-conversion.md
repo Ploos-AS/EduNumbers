@@ -20,6 +20,8 @@ Binary provides a convenient bridge. Group four bits for hexadecimal and three b
 
 ## OBSERVE
 
+No: `1010₂ = 12₈ = 10₁₀ = A₁₆`. The four notations represent the same value in different bases.
+
 The value remains unchanged throughout. Only the symbols and positional weights differ.
 
 ## EXPLAIN
