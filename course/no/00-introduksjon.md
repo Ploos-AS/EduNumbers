@@ -19,7 +19,7 @@ Etter kurset skal du blant annet kunne:
 - lese og skrive binære, desimale, oktale og heksadesimale tall;
 - konvertere mellom baser;
 - forstå unsigned og signed heltall;
-- forklare two's complement, overflow og wraparound;
+- forklare toerkomplement, overflow og wraparound;
 - bruke bitvise operasjoner og bitmasker;
 - lese adresser og enkle hex-dumps;
 - forklare little endian og big endian;
