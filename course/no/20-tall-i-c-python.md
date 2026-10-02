@@ -8,7 +8,7 @@ Vil `255 + 1` alltid gi samme resultat i C og Python?
 
 ## STEP — literals
 
-Begge språk støtter moderne former som:
+Heksadesimale og desimale literaler fungerer likt i begge språk. Binære literaler som `0b101010` støttes i Python og fra C23 i C (mange kompilatorer, blant annet GCC og Clang, har lenge støttet dem som utvidelse):
 
 ```
 0b101010
@@ -32,7 +32,7 @@ int32_t  c = -42;
 
 Eksakt-bredde-typene finnes når implementasjonen tilbyr en heltallstype med den aktuelle bredden.
 
-Unsigned C-aritmetikk følger modulo (2^n) for typens bredde. Signed overflow må ikke behandles som om C lover samme wraparound; signed integer overflow er ikke definert på samme måte av språket.
+Unsigned C-aritmetikk følger modulo `2ⁿ` for typens bredde. Signed overflow må ikke behandles som om C lover samme wraparound; signed integer overflow er ikke definert på samme måte av språket.
 
 ## Python: vilkårlig store heltall
 
@@ -49,7 +49,7 @@ x = (255 + 1) & 0xFF
 
 Da blir resultatet 0.
 
-## Shifts og masks
+## Skift og masker
 
 ```
 value & 0x0F
