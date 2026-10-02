@@ -18,14 +18,11 @@ publications:
     products:
       web: {}
       epub:
-        isbn: PENDING
+        isbn: 978-82-94310-00-5
       pdf:
-        isbn: PENDING
-      paperback:
-        isbn: PENDING
-        production: POD
+        isbn: 978-82-94310-01-2
       kindle:
-        isbn: null
+        isbn: 978-82-94310-02-9
         external_id_type: ASIN
         external_id: null
         source: epub
@@ -39,14 +36,11 @@ publications:
     products:
       web: {}
       epub:
-        isbn: PENDING
+        isbn: 978-82-94310-03-6
       pdf:
-        isbn: PENDING
-      paperback:
-        isbn: PENDING
-        production: POD
+        isbn: 978-82-94310-04-3
       kindle:
-        isbn: null
+        isbn: 978-82-94310-05-0
         external_id_type: ASIN
         external_id: null
         source: epub
