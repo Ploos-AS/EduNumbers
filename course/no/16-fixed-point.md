@@ -26,6 +26,8 @@ Fixed-point gir forutsigbar presisjon og kan være effektivt på mikrokontroller
 
 ## OBSERVE
 
+Med fire brøkbit ligger binærpunktet etter de fire øverste bitene: `0011.1000₂ = 3 + 1/2 = 3.5`.
+
 Binærpunktet lagres ikke som et eget symbol. Formatdefinisjonen forteller hvor det ligger.
 
 ## EXPLAIN
