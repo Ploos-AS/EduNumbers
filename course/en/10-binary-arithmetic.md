@@ -14,9 +14,20 @@ Subtraction can use borrow directly or addition of a two's-complement negative o
 
 ## CPU flags
 
-Common flags include **C** carry, **Z** zero, **N** negative/top-bit state, and **V** signed overflow.
+Many CPUs record properties of the result. Common flags include:
+
+- **C / Carry**: carry out of the top bit; relevant to unsigned arithmetic.
+- **Z / Zero**: the result is zero.
+- **N / Negative**: often follows the top bit of the result.
+- **V / Overflow**: the signed result cannot be represented in the selected width.
 
 For signed eight-bit arithmetic, `7F₁₆ + 01₁₆ = 80₁₆`. The mathematical +128 cannot be represented, so CPUs with an overflow flag report that condition.
+
+## Common misconception
+
+Flag names and exact behavior are not identical across CPU architectures. The instruction-set documentation defines which flags an instruction changes and what they mean there.
+
+Carry and signed overflow are also different conditions: an operation can set one without setting the other.
 
 ## OBSERVE
 
