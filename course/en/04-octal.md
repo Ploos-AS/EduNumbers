@@ -18,10 +18,16 @@ For the prediction, `111₂ = 7₈`, `101₂ = 5₈` and `010₂ = 2₈`, so `11
 
 Three bits represent values 0–7, exactly the digit range of octal.
 
+## Common misconception
+
+The value `755` in a Unix file mode is normally read as octal when used as a numeric permission value. It does not mean decimal seven hundred and fifty-five.
+
 ## EXPLAIN
 
 Octal does not change the number, only its representation. Its computing value comes from its direct three-bit grouping.
 
 ## Check yourself
 
-Convert `111111₂` to octal and `17₈` to binary.
+1. Convert `111111₂` to octal.
+2. Convert `17₈` to binary.
+3. Why is the digit 8 invalid inside an octal number?
