@@ -7,7 +7,7 @@ Dette prosjektet samler hele EduNumbers. Du skal ikke bare konvertere tall; du s
 Du får denne syntetiske hex-dumpen:
 
 ```text
-0000: 45 4E 55 4D 01 A5 0C 00 34 12 FE FF 50 4C 4F 4F
+0000: 45 4E 55 4D 01 A5 10 00 34 12 FE FF 50 4C 4F 4F
 0010: 53 00 00 00 78 56 34 12
 ```
 
@@ -57,13 +57,13 @@ Hvis dette er et flaggfelt, er bit 7, 5, 2 og 0 satt.
 
 Offset `0x06–0x07` inneholder:
 
-`0C 00`
+`10 00`
 
-Som little-endian 16-bit blir dette `0x000C = 12`.
+Som little-endian 16-bit blir dette `0x0010 = 16`.
 
-Som big-endian blir det `0x0C00 = 3072`.
+Som big-endian blir det `0x1000 = 4096`.
 
-Siden bufferen bare er 24 byte, kan 12 være en mer plausibel lokal lengde — men plausibilitet er fortsatt ikke det samme som dokumentasjon.
+Siden bufferen bare er 24 byte, kan 16 være en plausibel lengde for alle 16 byte etter den åtte byte lange headeren — men plausibilitet er fortsatt ikke det samme som dokumentasjon.
 
 ## STEP 5 — heltall og signedness
 
@@ -110,7 +110,7 @@ En konsistent modell er:
 | 0x00 | 4 | magic | ASCII `ENUM` |
 | 0x04 | 1 | version | 1 |
 | 0x05 | 1 | flags | `0xA5` |
-| 0x06 | 2 | length | 12, little-endian |
+| 0x06 | 2 | length | 16, little-endian |
 | 0x08 | 2 | id | `0x1234` |
 | 0x0A | 2 | delta | −2 signed |
 | 0x0C | 8 | name | `PLOOS`, null-padded |
@@ -124,7 +124,7 @@ I Python kan deler av bufferen undersøkes eksplisitt:
 
 ```python
 data = bytes.fromhex(
-    "45 4E 55 4D 01 A5 0C 00 34 12 FE FF "
+    "45 4E 55 4D 01 A5 10 00 34 12 FE FF "
     "50 4C 4F 4F 53 00 00 00 78 56 34 12"
 )
 
@@ -136,7 +136,7 @@ value = int.from_bytes(data[20:24], "little")
 print(length, ident, delta, hex(value))
 ```
 
-Forventet resultat er `12 4660 -2 0x12345678`.
+Forventet resultat er `16 4660 −2 0x12345678`.
 
 ## OBSERVE
 
