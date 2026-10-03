@@ -42,7 +42,7 @@ jobs:
         with:
           go-version-file: go.mod
       - name: Install frozen publishing QA engine
-        run: python -m pip install "git+https://github.com/Ploos-AS/publishing-qa.git@0505629eb2c2190aff83bcd5014b20e82b0f24a4"
+        run: python -m pip install "git+https://github.com/Ploos-AS/publishing-qa.git@323d9afdd8a06ef24dc57e59015e572e14d744f0"
       - name: Run deterministic publishing QA
         run: publishing-qa . --output qa-report.json
       - name: Upload QA report
