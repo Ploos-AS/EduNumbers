@@ -1,0 +1,54 @@
+name: Publishing QA pilot
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "course/**"
+      - "exercises/**"
+      - "solutions/**"
+      - "publication.yaml"
+      - "publishing-qa.yml"
+      - "scripts/**"
+      - "go.mod"
+      - "go.sum"
+      - ".github/workflows/publishing-qa.yml"
+  pull_request:
+    paths:
+      - "course/**"
+      - "exercises/**"
+      - "solutions/**"
+      - "publication.yaml"
+      - "publishing-qa.yml"
+      - "scripts/**"
+      - "go.mod"
+      - "go.sum"
+      - ".github/workflows/publishing-qa.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  deterministic:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+      - name: Install frozen publishing QA engine
+        run: python -m pip install "git+https://github.com/Ploos-AS/publishing-qa.git@0505629eb2c2190aff83bcd5014b20e82b0f24a4"
+      - name: Run deterministic publishing QA
+        run: publishing-qa . --output qa-report.json
+      - name: Upload QA report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: edunumbers-publishing-qa
+          path: qa-report.json
+          if-no-files-found: error
