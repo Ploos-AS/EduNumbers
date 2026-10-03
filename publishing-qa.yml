@@ -1,0 +1,78 @@
+qa_version: 1
+
+project:
+  type: course-book
+  primary_language: nb
+  languages: [nb, en]
+
+source:
+  paths:
+    - course/no
+    - course/en
+  frontmatter_required: []
+
+parity:
+  enabled: true
+  structure: true
+  language_dirs:
+    nb: course/no
+    en: course/en
+
+exercises:
+  enabled: true
+  exercise_dir: exercises
+  solution_dir: solutions
+
+publication:
+  enabled: true
+  metadata_file: publication.yaml
+  required_metadata:
+    - project
+    - publications.nb.title
+    - publications.nb.author
+    - publications.nb.publisher
+    - publications.nb.license
+    - publications.en.title
+    - publications.en.author
+    - publications.en.publisher
+    - publications.en.license
+  required_artifacts: []
+
+chapter_order:
+  enabled: false
+  manifest: chapters.yml
+
+hooks:
+  - name: source-check
+    command: python3 scripts/check_sources.py
+  - name: go-test
+    command: go test ./...
+
+review:
+  mode: full
+
+ai:
+  independent_reviews: true
+  reviewers:
+    required:
+      - id: openai
+        roles: [technical, qa_lead]
+      - id: anthropic
+        roles: [pedagogy, manuscript]
+      - id: google
+        roles: [fact_check, consistency]
+      - id: mistral
+        roles: [independent, language]
+    supplemental: []
+
+release:
+  max_blocker: 0
+  max_critical: 0
+  max_high: 0
+  require_deterministic_tests: true
+  require_build: true
+  require_human_approval: true
+
+evidence:
+  producers: []
+  bindings: []
