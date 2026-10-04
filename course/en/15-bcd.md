@@ -12,7 +12,13 @@ Packed BCD gives each digit one nibble: `42 -> 0100 0010₂ -> 0x42`. Ordinary b
 
 Only nibble values 0–9 are normally valid decimal digits. Unpacked BCD commonly gives each digit a whole byte.
 
-BCD has been useful in calculators, clocks, counters, financial systems and historical computers where decimal digits need direct preservation.
+## Why BCD?
+
+BCD has been useful in calculators, clocks, counters, financial systems and historical computers where decimal digits need direct preservation and display without binary/decimal rounding issues.
+
+## Common misconception
+
+`0x42` does not automatically mean decimal 42. As an ordinary binary integer, `0x42 = 66₁₀`; only when the format specifies packed BCD are the two nibbles interpreted as decimal digits 4 and 2.
 
 ## OBSERVE
 
