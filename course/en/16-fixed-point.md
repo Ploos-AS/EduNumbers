@@ -12,9 +12,11 @@ Interpreted as `0011.1000₂`, the value is 3.5. The stored integer is 56 and fo
 
 With `f` fractional bits, the resolution is `1 / 2^f`.
 
-Two's-complement signed integers can use the same scaling rule for signed fixed-point values.
+## Signed fixed-point
 
-## Tradeoffs
+Two's-complement can be combined with a fixed binary point. Interpret the bit pattern as a signed integer first, then scale it by `1 / 2^f`.
+
+## Advantages and limitations
 
 Fixed-point offers predictable resolution and efficient arithmetic on systems without fast floating-point hardware, but software must manage scaling, range and overflow explicitly.
 
