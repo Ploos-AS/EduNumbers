@@ -45,8 +45,16 @@ chapter_order:
 hooks:
   - name: source-check
     command: python3 scripts/check_sources.py
-  - name: go-test
-    command: go test ./...
+  - name: interactive-tests
+    command: >-
+      node tests/base-converter.test.js &&
+      node tests/bit-visualizer.test.js &&
+      node tests/twos-complement.test.js &&
+      node tests/endian-visualizer.test.js &&
+      node tests/bitmask-playground.test.js &&
+      node tests/ieee754-explorer.test.js &&
+      node tests/interactive-i18n.test.js &&
+      node tests/i18n-detect.test.js
 
 review:
   mode: full
