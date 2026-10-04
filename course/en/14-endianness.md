@@ -12,6 +12,8 @@ Big-endian stores the most significant byte first: `12 34 56 78` at increasing a
 
 Little-endian stores the least significant byte first: `78 56 34 12`.
 
+## Important distinction
+
 The bit notation inside each normally written byte is not reversed. Here, endianness is about ordering bytes of a multi-byte value.
 
 The Motorola 68000 family is associated with big-endian storage, while x86 uses little-endian. Protocols and file formats can define byte order independently of the host CPU.
