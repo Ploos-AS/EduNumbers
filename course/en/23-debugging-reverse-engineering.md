@@ -18,11 +18,13 @@ Useful observations include repeated zeros, recurring values, text-like sequence
 
 A hypothesis becomes stronger when it explains multiple independent examples.
 
-## Integers, addresses and offsets
+## Integers in a dump
 
 Bytes `34 12` may represent big-endian `0x3412` or little-endian `0x1234`.
 
 If the field is hypothesized to be a length, test whether that value agrees with the surrounding structure.
+
+## Addresses and offsets
 
 Debugger addresses are commonly hexadecimal. Address differences reveal sizes: `0x1040 - 0x1000 = 0x40 = 64`.
 
